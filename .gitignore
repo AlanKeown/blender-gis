@@ -17,3 +17,6 @@ config/local.toml
 *.laz
 *.blend1
 renders/
+
+# Claude desktop app outputs
+Claude outputs/
