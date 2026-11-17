@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.blend binary
+*.tif   binary
+*.laz   binary
+*.png   binary
+*.jpg   binary
+*.glb   binary
+*.mp4   binary

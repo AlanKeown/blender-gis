@@ -1,0 +1,784 @@
+
+Cool GIS Projects in Blender
+What are some cool GISey things I can do with Blender?
+Blender is surprisingly strong for GIS-style work—especially visualization, 3D terrain, urban modeling, and cartographic rendering—thanks to free and paid addons that bring real geospatial data into the 3D viewport with proper georeferencing.
+
+Core Tool: BlenderGIS (Free, Open-Source)
+The main addon is BlenderGIS (GitHub: domlysz/BlenderGIS, ~10k stars). It works with recent Blender versions (including 5.x) and adds a GIS menu. Key capabilities:
+
+Import real geodata with CRS/EPSG support and true georeferencing (using PROJ under the hood).
+Shapefiles, GeoJSON, GeoPackage, KML, OSM XML.
+Georeferenced rasters/GeoTIFFs (satellite imagery, orthophotos).
+DEMs (GeoTIFF, ASCII GRID, SRTM) → 3D terrain meshes via Delaunay triangulation or displace.
+Web geodata: Stream basemaps (OpenStreetMap, Bing, Google-style tiles, custom WMS/WMTS) live into the viewport. Pull OSM buildings/roads/points via Overpass, and download elevation (SRTM via OpenTopography—needs a free API key).
+Terrain tools: Drape imagery on DEMs, drop objects onto terrain, earth curvature correction, lon/lat-to-sphere conversion.
+Analysis nodes: Shader setups for height, slope, aspect (classic GIS terrain analysis).
+Cameras: Create georeferenced cameras from geotagged photos; render georeferenced output rasters.
+Export: Shapefile export (limited attributes).
+This is the classic bridge between QGIS (or any GIS package) and Blender. Export DEMs/vectors from QGIS, import with CRS preserved, and everything lines up at real-world scale.
+
+Cool Things You Can Actually Do
+Photoreal or stylized 3D maps of real places: Pull a DEM + satellite basemap + OSM buildings for any city or landscape. Extrude buildings by height attributes, add roads, then light/render in Cycles/Eevee. Great for urban context, landscape visualization, or “what does this place look like in 3D.”
+Shaded-relief / topographic art: Classic workflow—prepare a DEM in QGIS (or grab SRTM), displace a plane in Blender, add lighting and color ramps. People make beautiful exaggerated-relief maps of countries, mountains, islands (there are popular tutorials for this, often called “geoblender” style).
+City/urban reconstruction: OSM footprints + heights → extruded buildings. Pair with satellite texture or procedural materials. Add-ons like Blosm (formerly Blender-OSM) go further with better building detailing, textures, and even progressive Google 3D Tiles import.
+Terrain analysis & design: Slope/aspect visualization via nodes, cut-and-fill volume calculations (some newer tools support this), scatter vegetation/rocks on slopes with tools like Geo-Scatter.
+Geotagged photo reconstruction: Place cameras from EXIF GPS + orientation data, or from GIS point layers. Useful for site surveys, visual impact studies, or matching real photos to 3D models.
+Cartographic / investigative viz: Accurate scale, true north, measurable distances. Used in visual investigations, planning, architecture, and environmental storytelling.
+Procedural / hybrid workflows: Import real base data, then procedurally generate forests, roads, or buildings on top. Or go the other way—model something in Blender and export a georeferenced raster back to QGIS.
+Animation & storytelling: Fly-throughs over real terrain, time-of-day lighting with correct sun position, before/after scenarios, or data-driven animations (e.g., building growth).
+Other Notable Tools
+Blosm / Blender-OSM: Faster city generation from OSM + SRTM + Google 3D Tiles. More “push-button pretty city” than pure GIS precision.
+GIS2BLEND (paid): More automated pipeline—OSM download, attribute-driven collections/materials, procedural buildings/roads, terrain projection.
+ImageGIS2Camera: Specialized for turning geotagged photos or GIS points into organized Blender cameras.
+DL GIS Exchange and similar: Bidirectional terrain/raster exchange (Blender ↔ GIS) with cut/fill volumes.
+Pair with QGIS plugins (QuickOSM, OpenTopography, QuickMapServices) for data prep, then drop into Blender.
+Practical Tips
+Start with BlenderGIS + a small area (a neighborhood or hill) so you don’t choke on huge meshes.
+Get a free OpenTopography API key for good DEM downloads.
+Watch for scale: Blender works in local coordinates; the addon handles the georeferencing so things stay accurate.
+For high-quality maps, many people still do DEM prep and color ramps in QGIS, then bring the heightmap into Blender for displacement + lighting (very common artistic workflow).
+Combine with Geometry Nodes for advanced procedural GIS-style operations.
+In short: Blender turns GIS data into something you can fly around, light dramatically, animate, and render at high quality—something pure GIS packages aren’t built for. It’s especially fun for terrain art, urban models, and site visualization. The free BlenderGIS addon is the best place to start.
+
+Is there a MCP server for BlenderGIS?
+No, there is no dedicated MCP server specifically for BlenderGIS.
+
+BlenderGIS is a regular Blender addon (Python operators + a GIS menu for importing shapefiles, DEMs, OSM data, basemaps, georeferencing, etc.). It does not expose an MCP interface of its own.
+
+What does exist
+Blender MCP servers (general control of Blender via the Model Context Protocol):
+
+The popular community one is mcp-for-blender (formerly blender-mcp by ahujasid) — available on PyPI and GitHub. It lets an AI client run Python in a live Blender session, inspect/edit the scene, create objects, materials, etc.
+There is also an official experimental Blender Lab MCP Server from the Blender Foundation (mainly for Blender 5.1+).
+Several other community servers exist with different tool sets (typed tools, more domain coverage, headless modes, etc.).
+Because these give the AI full access to Blender’s Python API (bpy), an agent can call BlenderGIS operators if the addon is installed and enabled (e.g. by writing the appropriate bpy.ops... calls). There is just no pre-built, high-level MCP tool layer that wraps the BlenderGIS menu/features.
+
+Separate GIS MCP server:
+
+There is a project called gis-mcp (GitHub: mahdin75/gis-mcp) that exposes geospatial operations (Shapely, GeoPandas, Rasterio, coordinate transforms, etc.) to AI agents. It is not connected to Blender or BlenderGIS.
+Related experimental work:
+
+A project called geoblender builds geographic/OSM pipelines on top of a Blender MCP layer and can produce Blender scenes from place names or coordinates. It is not a BlenderGIS-specific MCP server.
+Practical takeaway
+If you want AI-driven BlenderGIS workflows, install a general Blender MCP server (mcp-for-blender is the most common starting point), make sure BlenderGIS is enabled in Blender, and let the model drive the addon via Python. There is currently no turnkey “BlenderGIS MCP” package that exposes its tools at a higher level.
+
+You suggest gis-mcp: Would this be a better option than using QGIS and the QGIS mcp server with blender?
+Short answer: No — gis-mcp is usually not a better option if your end goal is working with Blender (or producing nice 3D/terrain visualizations). QGIS + a QGIS MCP server is the stronger path for most people in this workflow.
+
+Quick comparison
+Aspect	gis-mcp	QGIS + QGIS MCP
+What it is	Standalone Python MCP server (GeoPandas, Shapely, Rasterio, PyProj, etc.)	Live control of the full QGIS desktop application
+Strengths	Lightweight, no GUI needed, pure geospatial analysis & transformations, good for scripts/pipelines	Full GIS environment: Processing Toolbox, styling, layouts, plugins, visual canvas, complex workflows
+Blender relevance	Low. You still have to manually export files and import them into Blender	High. Classic workflow is prepare data in QGIS → export DEM/shapefile/GeoTIFF → import with BlenderGIS
+Visualization	None (or basic via libraries). No interactive map	Excellent — you see the map, styles, and can render layouts
+Complexity / setup	Simpler (just a Python package)	Needs QGIS running + plugin + MCP server
+Best for	Headless analysis, coordinate math, geometry ops, scripting	Real GIS work, data prep for Blender, cartography, exploratory analysis
+
+
+Why QGIS + MCP is usually better with Blender
+Natural hand-off to BlenderGIS
+The most common and reliable pipeline is still:
+
+Do analysis / cleaning / DEM prep / OSM extraction in QGIS
+Export clean GeoTIFFs, shapefiles, or GeoPackages
+Import them into Blender with BlenderGIS (which understands CRS and georeferencing)
+QGIS MCP lets an AI drive that preparation step interactively.
+
+You get a real map canvas
+gis-mcp is pure computation. With QGIS you (and the AI) can actually see the layers, check alignments, style things, and verify results before exporting.
+
+Processing power
+QGIS gives you the entire Processing Toolbox (hundreds of algorithms), plugins, and mature tools that gis-mcp only partially reimplements via lower-level libraries.
+
+Existing ecosystem
+There are solid, actively used QGIS MCP implementations (notably the maintained nkarasiak/qgis-mcp + the official plugin in the QGIS repository, plus a few others). They expose 100+ tools for layers, features, processing, rendering, etc.
+
+When gis-mcp could be preferable
+You only need pure geometric/raster operations and don’t care about a visual GIS interface.
+You’re building automated pipelines or headless services.
+You want something lighter that doesn’t require keeping QGIS open.
+You’re doing coordinate transforms, buffering, intersections, etc., and will feed results into Blender some other way.
+Recommended practical stack for “AI + GIS → Blender”
+For most people wanting AI help with GISey Blender work:
+
+QGIS + QGIS MCP → prepare and clean the data
+Blender + BlenderGIS (+ optionally a Blender MCP server) → bring it into 3D and visualize/render
+You can run both MCP servers at the same time if your client supports multiple servers. The AI can then move between “do the GIS prep in QGIS” and “now import and work in Blender.”
+
+Bottom line: Stick with QGIS + its MCP server if Blender is part of the goal. gis-mcp is a useful complementary tool for pure analysis, but it doesn’t replace the QGIS → BlenderGIS pipeline.
+
+What are some cool GISey things I can do with Blender?
+
+Blender is a terrible GIS, which is exactly why it's fun for GIS. It has no CRS, no attribute table, and no topology checks. What it does have is real lighting, real cameras, displacement, and Geometry Nodes, so all that flat data you've been staring at in 2D suddenly gets depth, shadow, and motion.
+
+Think of it as a split workflow: do the geoprocessing in QGIS or ArcGIS Pro, then hand Blender the clean DEM, imagery, and vectors to make it look alive.
+
+## 1. Real terrain that looks like art
+
+This is the classic entry point, and still the most satisfying.
+
+- **Stylized relief maps:** Export a DEM from QGIS as a greyscale image, bring it into Blender as a subdivided plane, and drive a Displace modifier with it. Add an angled area light and an orthographic camera straight overhead and you get that chunky, tactile hillshade look that QGIS alone can't quite pull off. One popular workflow does exactly this for the <inline>{"canonical_name":"Isle of Man","name":"Isle of Man","type":"place_entity"}</inline>, using QGIS for the boundary and SRTM 30m elevation, then Blender for displacement and lighting.
+- **One-click terrain with BlenderGIS:** The free, open-source BlenderGIS addon can pull a basemap and SRTM elevation straight into the viewport and build the terrain mesh for you. It supports Blender 5.0, 4.3, and 4.2 LTS, and handles shapefiles, GeoTIFF DEMs, and OpenStreetMap XML. A quick demo of this is just searching for <inline>{"canonical_name":"Mount Everest","name":"Mount Everest","type":"place_entity"}</inline>, grabbing the satellite basemap, then hitting Get Elevation (SRTM) and watching the flat plane pop into a mountain range.
+- **Thematic drapes:** Take a classified raster or shapefile, like rainforest suitability zones, drape it over the DEM with a color ramp, and render it in 3D. One creator retraced a pixelated shapefile by hand, exported it at high res, then used Blender for elevation, color, and light to turn a book map into a proper 3D scene.
+
+## 2. Instant real cities
+
+- **Extruded OpenStreetMap cities:** BlenderGIS imports buildings as meshes and roads as curves, so you can extrude footprints by their height attribute in one go.
+- **Blosm and Gorani:** Blosm, formerly Blender-OSM, imports OpenStreetMap data, Google 3D cities, and terrain. Gorani is the newer, streamlined version on Blender Extensions: pick a site on a map and it brings in buildings, roads, terrain, water, and parks in tidy collections like `CTX::Buildings` and `CTX::Terrain`.
+- **Photoreal tiles:** Tools like Earth2MSFS and Concept Studio OSM pull textured 3D tiles and assemble whole downtowns in minutes, which is great for a flythrough or a before/after visualisation. One reel shows the same workflow being used for Rio, Hollywood, and other big cities at day and night.
+
+## 3. Data viz QGIS can't do
+
+This is where Blender stops being a renderer and starts being an analysis storyteller.
+
+- **3D choropleths and bars:** Use Geometry Nodes to read an attribute, like population, housing price, or flood depth, and drive extrusion height and color. A flat choropleth becomes a city of towers you can orbit.
+- **Flows and tracks:** Turn GPS tracks, shipping routes, flight paths, or migration flows into tubes or animated particles. Give them a glow, animate a dash along the curve, and you have a movement map that actually moves.
+- **Point clouds from LiDAR:** Import LAS/LAZ, or convert a mesh to points with Geometry Nodes Points on Faces, then color by classification, height, or intensity. One Blosm demo turns the <inline>{"canonical_name":"Eiffel Tower","name":"Eiffel Tower","type":"place_entity"}</inline> model into a point cloud this way, though it warns that tens of millions of points will punish a normal laptop.
+- **Time:** Animate a time-aware layer, like fire spread, urban growth, or sea-level rise, by keyframing the displacement or the visibility of yearly layers.
+
+## 4. Analysis you can *see*
+
+- **Sun and shadow studies:** Blender has a Sun Position addon that takes lat/long and time. Drop a proposed building onto real terrain and surrounding OpenStreetMap buildings, then scrub through a day or a year to see shadows fall.
+- **Flood and viewshed mockups:** Put a semi-transparent water plane at a given elevation on your DEM and animate it rising. Or place a camera at a viewpoint height, render what it can actually see over terrain, and compare it to your QGIS viewshed.
+- **Site context for a proposal:** Import parcels from QGIS, extrude a proposed massing in white, keep the context in muted grey, and render from street level. One creator did exactly this for a Utah site, using QGIS for topography and satellite imagery and Blender for the 3D massing.
+
+## 5. Physical stuff
+
+- **3D-print your terrain:** Once you have a nice DEM mesh, you can slice it and print it. People are even making terrain puzzles, where a circular model of <inline>{"canonical_name":"Lake Geneva","name":"Lake Geneva","type":"place_entity"}</inline> is split into jigsaw pieces with a hiking route preserved across them, then printed in color.
+
+## How to wire it without pain
+
+| Tool | What it does | Best for |
+| --- | --- | --- |
+| BlenderGIS | Free addon for basemaps, DEM, shapefile, OpenStreetMap | Quick terrain and vectors, full control |
+| Blosm | OpenStreetMap plus Google 3D cities and terrain | Fast city context |
+| Gorani | One-click site context on Blender Extensions | Clean, architect-ready site models |
+| QGIS plus Blender | Export DEM as image, vectors as shapefile/GeoJSON | Highest quality stylized maps |
+
+
+
+Two gotchas that save hours:
+
+- **Reproject first.** Blender works in meters with no CRS. Reproject everything to a local projected CRS, like UTM, in QGIS before export.
+- **Center at origin.** Shift your data so 0,0 in Blender is the middle of your study area, otherwise floating-point wobble makes cameras jitter. BlenderGIS handles this with its georeferencing, but if you hand-export, do it manually.
+
+If you want a one-evening win, start with BlenderGIS: basemap plus SRTM for a place you know well, extrude the OpenStreetMap buildings, add a sun, and do a 20-second camera flythrough. That one render usually hooks people more than any 2D map ever did.
+
+Is there an ArcGIS MCP server?
+Yes, but it's not one server. It's a family, and the official one is still pretty narrow.
+
+As of late 2026, Esri is rolling MCP out across its foundational products, with each one exposing a different set of tools to start with and expanding over time.
+
+## The official one: MCP for ArcGIS Location Services (beta)
+
+This is the Esri-hosted server that most people mean when they ask.
+
+- **What it is:** An Esri-hosted MCP server that lets AI agents access Location Services through standardized MCP tools, without calling ArcGIS REST APIs directly.
+- **Launched:** June 29, 2026 in beta.
+- **Endpoint:** `https://location-services-mcp.arcgis.com/beta/mcp`, reported as having nine tools in version 1.0.0-beta.1.9 of October 27, 2026.
+- **What it does now:** Geocoding, routing, elevation, and static maps in beta, plus reverse geocoding and directions in the docs.
+- **What you need:** An ArcGIS Location Platform or ArcGIS Online account.
+- **Pricing:** No extra charge for using MCP itself, standard service consumption charges still apply for the underlying geocoding, routing, etc.
+
+In Esri's broader vision, an agent on any MCP-compliant platform could call ArcGIS to geocode an address, calculate a route, query feature layers, run a geoprocessing tool, search for content, export a map, geoenrich a location, retrieve elevation, or find nearby places. That full vision is not in the beta Location Services server yet, it's the direction for ArcGIS Online, ArcGIS Enterprise, and Location Platform together.
+
+Esri also says MCP for ArcGIS Monitor for observability, and MCP for ArcGIS developers to support coding agents, are planned.
+
+## The community ones that fill the gaps
+
+This is where the useful stuff lives right now if you want to manage *your* content or drive Pro.
+
+| Server | What it actually covers |
+| --- | --- |
+| **arcgis-portal-mcp** | Portal and ArcGIS Online content, search, inspect, edit, publish, admin |
+| **arcgis-mcp-bridge / Pro AddIn / CLI-Anything Pro** | Local ArcGIS Pro via ArcPy, over stdio |
+| **Utility Network MCP** | Utility Network traces, subnetworks, dirty areas, associations |
+| **arcgis-docs-mcp / ArcGIS Knowledge MCP** | Search Esri docs from your AI client |
+
+The Portal one is explicit that it is independent open-source, not affiliated with or endorsed by Esri, and it claims 81 tools for ArcGIS Enterprise Portal and ArcGIS Online. Its own docs note the differentiation clearly: Esri's beta focuses on Location Services, while Portal MCP is a portal management tool, not a consumer of services.
+
+The Pro bridges are local-first and async, exposing ArcGIS Pro's ArcPy engine to Claude Desktop and other MCP hosts over stdio JSON-RPC. The Utility Network one is listed as a PyPI package for trace and subnetwork tools.
+
+## Which one for what
+
+- **You want an agent to geocode, route, get elevation, or make a static map:** Use the official Location Services MCP. It's the only one Esri hosts and supports.
+- **You want an agent to find, clean up, publish, or manage items in your Portal / Online org:** Use arcgis-portal-mcp. The official server doesn't cover Portal admin or feature service CRUD yet.
+- **You want an agent to actually run stuff inside a live Pro session:** Use one of the Pro bridges. That's a local, watch-it-work use case Esri hasn't shipped as a product.
+- **You want an agent to write code against the Maps SDK:** That's not an MCP server, it's the separate AI components beta in Maps SDK 5.0, `@arcgis/ai-components`, which can use MCP internally.
+
+So short answer: yes, official beta exists for Location Services, and a handful of community servers cover the Portal and Pro parts Esri hasn't shipped yet.
+
+Tell me more about arcgis-mcp-bridge / Pro AddIn / CLI-Anything Pro.
+These three all solve the same core problem, but they solve it in three different ways. The problem is that ArcPy can't attach to a *running* ArcGIS Pro from an external process, so each project picks a different workaround.
+
+None of them are official Esri projects. That matters for support, but also for how much freedom they have to touch your live project.
+
+## 1. arcgis-mcp-bridge by muend
+
+This is the most safety-focused one. Think of it as a controlled ArcPy API for an agent.
+
+**How it works:** Two processes, on purpose.
+
+- **Layer A, MCP server:** Handles stdio JSON-RPC, tool registration, Pydantic validation, and dispatch. It does *not* import ArcPy.
+- **Layer B, ArcPy worker:** A separate Python process running inside the licensed ArcGIS Pro Python environment. It imports ArcPy, executes the tool, and returns one structured JSON result.
+
+If the worker crashes, times out, or the license hiccups, the MCP server returns a structured error instead of dying with it. That separation is the whole design goal: keep the AI host lightweight and separate from the licensed ArcPy runtime.
+
+**What you get:** 100 declarative geoprocessing tools across 10 GIS verticals, including map and layer management, data management, geometry analysis, coordinate reference and projection, raster operations, vision analytics, export and layout, editing and topology, network analysis, and spatial statistics. The optional vision piece even includes a Sketch-to-GIS pipeline using OpenCV to extract hand-drawn boundaries into a geodatabase workflow.
+
+**Safety:** This is where it stands out.
+
+- **PathGuard:** Every filesystem-touching tool declares read, write, or read-list. Paths are validated before spawning a worker, and again before execution.
+- **Confirmation gates:** Destructive tools like append, delete, repair geometry, calculate field, or projection definition require `confirm=true` in the tool input. Mutation has to be intentional.
+- **CI without a license:** The test suite mocks ArcPy and focuses on contracts, PathGuard, and gates, so it runs without Pro. Real geoprocessing still needs Windows plus licensed Pro.
+
+**Install:** `pip install arcgis-mcp-bridge`, then `arcgis-mcp-setup` to prepare the Pro worker. It uses `ARCPY_PYTHON_PATH` to find the worker interpreter. It requires Windows, a licensed ArcGIS Pro installation, and Python 3.11 or newer for the bridge package, and it's listed as Apache-2.0, version 0.6.8, active as of October 2, 2026.
+
+**Best for:** Batch, repeatable ArcPy work where you want an agent to call tools but you don't want it freelancing on your file geodatabases. List feature classes, buffer parcels to a scratch GDB, dissolve, run slope/aspect, export layouts, inspect geometry errors.
+
+## 2. MCP-Server-ArcGIS-Pro-AddIn by nicogis
+
+This is the simplest one, and really a pattern / sample rather than a product.
+
+**How it works:** In-process add-in plus Named Pipes.
+
+- **ArcGIS Pro Add-In, C# with Pro SDK:** Runs in-process with Pro and exposes GIS operations through a local Named Pipe server.
+- **MCP Server, .NET 8 console app:** Defines the MCP tools, talks to the add-in via Named Pipes, and is configured as an MCP server in Visual Studio through `.mcp.json`. It uses the official `ModelContextProtocol` NuGet package.
+
+Because the add-in *is* inside Pro, it can touch the live map directly via `QueuedTask`.
+
+**What you get:** Only 4 tools out of the box:
+
+- `pro.getActiveMapName`
+- `pro.listLayers`
+- `pro.countFeatures`
+- `pro.zoomToLayer`
+
+The repo is explicit that it's a demo for GitHub Copilot in Agent Mode: open the solution in Visual Studio 2022 17.14 or later, make sure Pro is running with the add-in loaded, Copilot reads `.mcp.json` and starts the MCP server, then you can ask for `pro.listLayers` or `pro.countFeatures layer=Buildings`.
+
+**Prerequisites:** Visual Studio 2022 17.14 or later, ArcGIS Pro SDK for .NET, ArcGIS Pro installed on the same machine, .NET 8 SDK.
+
+**The fork to watch out for:** There's a fork by lucasmcoleman with the same name that tried to productize it into two artifacts, an MCP server exe and a Pro Add-In bundle. Its own releasing docs note the release pipeline has never produced a complete release on its own, CI builds only the exe. So if you find that fork, treat it as work-in-progress, not a download.
+
+**Best for:** Learning the in-process pattern, or if you live in Visual Studio and Copilot and just want to query the active map. You'd extend it yourself for `selectByAttribute`, `getCurrentExtent`, `exportLayer`, etc.
+
+## 3. CLI-Anything-Arcgis-Pro by Jasper0122
+
+This is the most ambitious one, because it tries to do both headless *and* live, plus real cartography.
+
+**How it works:** Two complementary modes.
+
+- **Headless CLI:** Drives `.aprx` projects and geodatabases on disk via a pip package over ArcPy. No GUI needed.
+- **Live bridge + MCP:** Drives the open Pro session you watch. An in-process .NET 8 add-in exposes the open project over a local socket, wrapped as MCP tools.
+
+The architecture is: Agent via MCP to `mcp_server.py` via HTTP to in-Pro add-in via QueuedTask to live project. The live bridge exists because ArcPy can't attach to a running Pro from an external process, so it sidesteps that with the in-process add-in, while the headless CLI stays perfect for batch automation.
+
+**What you get:**
+
+Headless CLI commands include `info`, `project inspect / layers`, `layout list / export / mapseries`, `map add-data / symbology graduated / symbology unique`, `data describe / fields / count / query / calc`, `gp <tool>` for any geoprocessing tool, and `batch export-layouts`. Every command speaks JSON: `{ "ok": ..., "data" | "error": ... }`.
+
+Live MCP tools are small but powerful:
+
+- `arcgis_ping` - read the open project: maps, layouts, active view
+- `arcgis_zoom_to` - zoom the active map to a layer
+- `arcgis_query` - query a layer's attributes to structured rows
+- `arcgis_run_gp` - run any GP tool, outputs are added to the live map
+- `arcgis_export_layout` - export a layout to PDF
+
+Its headline feature is professional cartography, export layouts and Map Series / map books, which the author positions as Pro's edge over QGIS. It also has a self-healing install: the CLI re-dispatches into Pro's Python automatically, so it works no matter where it's installed.
+
+**Requirements and license:** Requires a licensed ArcGIS Pro install, verified on ArcGIS Pro 3.4 / ArcPy 3.4.3 / .NET 8. It's listed in the official CLI-Anything registry and on Glama. License is the catch: source-available, not OSI open-source. It's PolyForm Noncommercial 1.0.0, free for noncommercial use including personal, study, research, evaluation, and nonprofit / educational / government, but commercial use requires a paid license. It's an independent downstream project, not affiliated with Esri.
+
+**Best for:** End-to-end agent cartography: data to clip to analysis to publication-ready map, while you watch it in Pro. The demo is literally a complete workflow driven live by an agent inside Pro.
+
+## Quick comparison
+
+| | arcgis-mcp-bridge | Pro AddIn (nicogis) | CLI-Anything Pro |
+| --- | --- | --- | --- |
+| Language | Python | C# / .NET 8 | Python + C# / .NET 8 |
+| Talks to Pro via | Separate ArcPy worker process | In-process add-in via Named Pipes | Headless ArcPy + in-process add-in via socket |
+| Tool count | 100 GP tools | 4 sample tools | Full ArcToolbox via CLI + 5 live MCP tools |
+| Safety | PathGuard + confirm gates | None built in, sample code | Agent-native JSON, no PathGuard equivalent |
+| License | Apache-2.0 | MIT in the sample | PolyForm Noncommercial, commercial needs paid license |
+| Maturity | Most production-minded | Demo / pattern | Most feature-complete, but source-available |
+
+If you want the safest way to let an agent run ArcPy batch jobs, start with arcgis-mcp-bridge. If you want to watch an agent drive your open map and spit out a print-quality layout or map book, start with CLI-Anything Pro, just check the noncommercial license against how you'll use it. If you just want to understand the pattern and build your own 4 to 10 tools for Copilot in VS, start with the nicogis sample.
+
+Would I develop this in windows or Ubuntu 26.04 on wsl2?
+Windows. For anything that actually touches Pro, WSL2 isn't an alternative, it's a detour.
+
+Ubuntu 26.04 on WSL2 is great for the *surrounding* work, but the three bridges you asked about all have to execute on Windows in the end.
+
+## Why Windows is non-negotiable
+
+**ArcGIS Pro itself is Windows-only.** Pro 3.5 is supported on Windows 11 Home, Pro, and Enterprise 64-bit, and Pro 3.7 lists the same Windows 11 requirement. There is no Linux build of Pro to run inside WSL2.
+
+**ArcPy is not pip-installable.** You can't `pip install arcpy` in Ubuntu and get Pro's ArcPy. It has to be installed in an Esri clone of the Pro Python installation, and Pro must be installed on your machine. One Esri Community thread puts it bluntly: WSL is a different environment so it cannot proceed to the next step, the only way to run ArcPy on Linux is via ArcGIS Server Linux.
+
+**The Pro SDK is Windows-only too.** The Pro 3.7 SDK for .NET lists supported platforms as Windows 11 Home, Pro, Enterprise 64-bit, with Visual Studio 2026 and .NET 10. And Esri notes that while no development license is required for the SDK itself, a licensed installation of Pro is required for development and use of add-ins.
+
+## What breaks per project in WSL2
+
+**1. arcgis-mcp-bridge (muend)**
+Layer A, the MCP server, is pure Python and *could* run in WSL2. Layer B, the ArcPy worker, must run in Pro's Python on Windows. The bridge is designed as a two-process model on the same host, with NDJSON over a subprocess bridge and PathGuard validating Windows paths before execution.
+
+Split them across WSL2 / Windows and you break the assumptions: `C:\data\project.gdb` in Windows becomes `/mnt/c/data/project.gdb` in WSL2, Named Pipes / subprocess spawning doesn't cross the boundary cleanly, and PathGuard will reject the translated paths. You *can* run its 81 mocked unit tests in WSL2 without Pro, but any real geoprocessing test has to be on Windows.
+
+**2. MCP-Server-ArcGIS-Pro-AddIn (nicogis)**
+This one is C# / .NET 8, in-process add-in plus Named Pipe to a .NET MCP server, built for Visual Studio Copilot. You can't build or load the add-in in WSL2 because it has to load inside a running Pro on Windows. WSL2 has no Pro to load it into.
+
+**3. CLI-Anything-Arcgis-Pro (Jasper0122)**
+Same story, doubled. The headless CLI self-dispatches into Pro's `arcgispro-py3` interpreter when ArcPy isn't present, which only works on Windows. The live bridge is an in-process .NET add-in that exposes the open project over a local socket. Its MCP server is stdlib-only Python, so you could edit it in WSL2, but it still has to talk to the in-Pro bridge on the Windows host, and you'll spend your time fighting localhost forwarding instead of building maps.
+
+## The hybrid that actually works
+
+Don't pick one, split by job:
+
+**Do on Windows 11 native:**
+- Pro 3.5 install and Pro Python env
+- All three repos, cloned to `C:\dev\...`, not to `/mnt/c/...` or `\\wsl$\...`
+- VS Code on Windows, or Visual Studio 2026 for the .NET add-ins
+- `pip install arcgis-mcp-bridge`, `arcgis-mcp-setup`, and all integration tests that call ArcPy
+- Running the MCP server that your AI client connects to via stdio
+
+**Do on Ubuntu 26.04 / WSL2:**
+- Git, linting, docs, pre-commit, mocked tests
+- QGIS, GDAL, PostGIS, Docker, and any Linux-only tooling you use alongside Pro
+- Testing an MCP client against the HTTP-based Portal MCP or Esri's Location Services MCP, which don't need local Pro
+- Editing the pure-Python parts of a bridge, then switching back to Windows to run them for real
+
+If you love the Ubuntu terminal, the cleanest setup is two VS Code windows: one Remote-WSL for Linux tooling, one Windows for Pro work, both pointing at the same repo on the Windows filesystem. That way you get Ubuntu ergonomics without trying to make Pro run where it can't.
+
+So: develop the bridges on Windows, use WSL2 as your Linux sidecar, not as the host.
+
+What are some cool GISey things I can do with Blender?
+Blending Blender with GIS opens up a massive playground where rigorous spatial data meets Hollywood-grade rendering, procedural generation, and physical simulations. Because Blender treats everything as a 3D mesh, it gives you creative controls that traditional GIS software (like QGIS or ArcGIS Pro) usually reserves for flat maps or rigid CAD exports.
+
+Here are some of the coolest GIS-powered workflows you can pull off in Blender:
+
+### 1. One-Click Real-World 3D Cities & Terrains (`BlenderGIS`)
+
+Instead of wrestling with manual CAD exports, the open-source **BlenderGIS** add-on bridges the gap right inside your viewport.
+
+* **What you can do:** Press a shortcut to pull up an interactive web map, select any region on Earth, and instantly import high-resolution satellite imagery, real-world elevation data (via SRTM / OpenTopography), and OpenStreetMap (OSM) vector data.
+* **The GIS twist:** Your flat satellite mesh instantly deforms into 3D topography using displacement modifiers, while OSM building footprints automatically extrude upward based on height or level tags. You get an instant, accurately scaled 3D model of any town, valley, or mountain range in the world.
+
+### 2. Procedural Landscapes with Geometry Nodes
+
+Blender’s **Geometry Nodes** system allows you to build node-based visual programming graphs—essentially a visual ETL pipeline for 3D geometry.
+
+* **What you can do:** Feed a raw Digital Elevation Model (DEM) mesh into Geometry Nodes to procedurally scatter assets based on spatial attributes.
+* **The GIS twist:** You can write rules like: *“If slope is greater than 35 degrees, scatter rock cliffs; if elevation is between X and Y and slope is low, scatter pine trees at a density driven by a moisture raster.”* It turns static terrain into a living, breathing, data-driven ecosystem.
+
+### 3. Cinematic Cartography and 3D Thematic Maps
+
+If you are tired of standard 2D choropleths or static print layouts, Blender lets you treat maps like cinematic environments.
+
+* **What you can do:** Import vector boundary shapes (like GeoJSON or Shapefiles via BlenderGIS) and extrude administrative districts, contours, or transportation networks into physical 3D blocks.
+* **The GIS twist:** Use Cycles (Blender’s ray-tracing render engine) to play with dramatic lighting, volumetric fog, moody shadows, and tilt-shift depth of field. You can create hyper-realistic miniature physical models of cities or elevation models that look like drone shots or tabletop dioramas.
+
+### 4. Environmental and Solar Shadow Analysis
+
+While GIS tools can calculate solar radiation theoretically, Blender can visualize light behavior with physical accuracy.
+
+* **What you can do:** Use Blender’s built-in **Sun Position** add-on (or geo-referenced sky models) by inputting exact GPS coordinates, date, and time.
+* **The GIS twist:** Run shadow animations over complex urban terrain or narrow mountain valleys to see exactly how shadows fall across a landscape or architectural layout throughout a solstitial cycle.
+
+### 5. Bringing Spatial Data into VR and Game Engines
+
+* **What you can do:** GIS data is often heavy and fragmented. You can use Blender as an optimization hub—cleaning topologies, reducing polygon counts on massive LiDAR point clouds or TINs, and baking high-resolution texture maps down onto low-poly meshes.
+* **The GIS twist:** Once optimized, you can export your custom geospatial environments directly into real-time engines or WebGL viewers to build immersive, interactive virtual walkthroughs of regional infrastructure or landscape plans.
+
+---
+If I wanted to use both ArcGIS Pro and QGIS to explore this, how would I set up the vscode environment? Would I have one WIndows one for ArcGIS Pro 3.5 and an Ubuntu 26.04 on WSL2 for the rest? How would I manage the repo?
+Splitting your workflow across Windows (for ArcGIS Pro) and Ubuntu 26.04 on WSL2 (for QGIS, GDAL, Python ETL, and Blender scripting) is actually the cleanest and most robust way to handle a GIS-to-3D pipeline. Trying to force ArcGIS Pro's tightly coupled .NET environment and specialized Python 3 environment into Linux will break, while running heavy open-source GIS tools natively inside Windows can sometimes feel clunky.
+
+Here is how you can architect this dual-environment setup, manage your code, and keep your sanity across the Windows/WSL boundary.
+
+---
+
+### 1. Environment Architecture: The Windows + WSL2 Split
+
+Your intuition is spot on. Divide and conquer based on toolchain dependencies:
+
+* **Windows 10/11 Host:**
+* **Tool:** **ArcGIS Pro 3.5**.
+* **Python Environment:** ArcGIS Pro manages its own isolated Python environment (traditionally `arcgispro-py3`). You write tools or scripts here strictly when you need deep Esri geoprocessing, ArcPy automation, or direct enterprise geodatabase interaction.
+
+
+* **Ubuntu 26.04 on WSL2:**
+* **Tools:** QGIS, GDAL/OGR, PostGIS client utilities, Blender (can be run headless for CLI rendering or natively on Linux if hardware acceleration is configured, though many run Blender GUI on Windows and point it to WSL data).
+* **Python Environment:** A clean, standard Python virtual environment (`venv` or `conda`/`mamba`) running standard geospatial libraries (`geopandas`, `shapely`, `rasterio`, `psycopg2`).
+
+
+
+---
+
+### 2. Setting Up VS Code Across the Boundary
+
+You don't need two separate VS Code installations. You should use **VS Code on Windows with the Remote - WSL Extension**.
+
+1. **Install on Windows:** Open your Windows VS Code and install the **WSL** extension (by Microsoft).
+2. **Launch from Ubuntu:** Open your Ubuntu 26.04 terminal in WSL, navigate to your project directory, and type:
+```bash
+code .
+
+```
+
+
+This opens a VS Code window running natively inside the WSL server backend, while rendering the UI on your Windows desktop.
+3. **The Extension Split:**
+* Inside this WSL-connected window, your Python interpreter will automatically point to your Ubuntu environment, giving you direct access to `geopandas`, `GDAL`, and local PostGIS databases.
+* For your ArcGIS Pro scripts, you can open a separate standard Windows VS Code window and point your Python interpreter to the ArcGIS Pro conda environment (`C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe`).
+
+
+
+---
+
+### 3. Managing the Repository & Avoiding the "Windows/Linux Path" Trap
+
+When working across Windows and WSL with spatial data, your biggest enemy will be **line endings (`CRLF` vs `LF`)** and **absolute file paths**. A solid repository strategy prevents these issues:
+
+* **Keep the Repo Inside WSL (`/home/username/projects/...`):**
+* Always clone and initialize your Git repository within the Linux filesystem (`ext4`), *not* mounted under `/mnt/c/...`. WSL performance for file watching and Git operations is dramatically faster inside the Linux root.
+
+
+* **Accessing from Windows:**
+* Windows applications (including ArcGIS Pro and Windows-native Blender) can seamlessly read and write files inside WSL via the network share path: `\\wsl.localhost\Ubuntu-26.04\home\username\projects\your-repo`.
+
+
+* **Configure Git Line Endings:**
+* In your repository root, add a `.gitattributes` file to ensure scripts don't break when moving between environments:
+```text
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+```
+
+
+
+
+* **Path Management in Python/Blender:**
+* Avoid hardcoding paths. Use Python’s `pathlib` module for all file handling so your scripts dynamically adapt whether they are executed by ArcGIS Pro on Windows or a Blender script running in WSL:
+```python
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_ROOT / "data" / "rasters"
+
+```
+
+
+
+
+
+```
+
+---
+
+<ElicitationsGroup message="To refine this architecture further:">
+  <Elicitation label="Set up automated Blender-to-GIS data sync scripts" query="Show me how to write a Python script using GDAL and Blender's Python API to automate importing elevation rasters and vector footprints."/>
+  <Elicitation label="Configure PostGIS database sharing between Windows and WSL" query="How do I configure a PostgreSQL/PostGIS database running in WSL2 so both ArcGIS Pro on Windows and QGIS in WSL can connect to it simultaneously?"/>
+</ElicitationsGroup>
+
+```
+
+What are some cool GISey things I can do with Blender?
+Blender gets especially fun when you treat GIS data as the raw material for a miniature world. Some good projects:
+
+| Project | What makes it cool | Data to start with |
+|---|---|---|
+| **3D terrain maps** | Turn a mountain range into a dramatically lit relief model, with exaggerated elevation and contour lines | Digital elevation models (DEMs) |
+| **A miniature of your neighbourhood** | Extrude buildings, add roads and trees, then render it like a tiny architectural model | OpenStreetMap buildings and roads, plus terrain |
+| **Flood-level animations** | Animate rising water over terrain to show which places become inundated at different elevations | DEM + water-level scenarios |
+| **Historical landscape reconstructions** | Rebuild an old coastline, lost river, or city at a particular moment in time | Historical maps, elevation, building footprints |
+| **LiDAR fly-throughs** | Explore detailed landscapes, forests, or streets as point clouds or converted meshes | Public LAS/LAZ point clouds |
+| **Raised-relief data maps** | Make population, rainfall, property values, or election results rise out of the map as physical forms | Geographic boundaries + a data table |
+| **Beautiful geological cutaways** | Slice away a hillside to reveal strata, faults, tunnels, or groundwater | Geological maps and subsurface models |
+| **Route animations** | Follow a hike, bike ride, or road trip with a moving camera and a glowing route across terrain | GPX track + DEM |
+| **Sun and shadow studies** | Animate how building or mountain shadows move through a day or season | Geolocated terrain/buildings + sun position |
+| **Physical map objects** | Make a 3D-printable mountain, watershed, island, or city tile | DEM or building footprints |
+
+**A few especially satisfying combinations:**
+
+- **Satellite imagery + terrain + low-angle lighting:** an ordinary aerial image becomes a cinematic landscape.
+- **Hillshade + contour lines + a cut-out base:** looks like a museum display or a premium atlas illustration.
+- **Terrain + Geometry Nodes:** scatter vegetation by elevation or slope, place buildings from points, or animate thousands of geographic features.
+- **Two dates of data + animation:** show urban growth, glacier retreat, or changes in a river channel.
+
+A practical workflow is **QGIS for preparing and checking the geography → Blender for geometry, materials, lighting, and animation**. BlenderGIS is a popular bridge for terrain and map imports; check compatibility with your Blender version. For precise work, keep a projected CRS and move your scene near Blender’s origin to avoid problems with very large coordinates.
+
+For flood or sun studies, Blender is great for communicating results; defensible analysis needs suitable GIS or simulation tools upstream.
+
+**My pick for a first project:** a small terrain diorama of somewhere you know, with an aerial-image texture, a highlighted walking route, and a slow camera orbit. It combines real geography with an immediately rewarding result.
+
+If I wanted to use both ArcGIS Pro and QGIS to explore this, how would I set up the vscode environment? Would I have one WIndows one for ArcGIS Pro 3.5 and an Ubuntu 26.04 on WSL2 for the rest? How would I manage the repo?
+Yes—**Windows for ArcGIS Pro 3.5 and WSL2 for open-source tooling is a good setup**. I’d also run Blender and initially QGIS on Windows, using WSL for scripting, data processing, and automation. You can add a Linux QGIS environment when you need it.
+
+The key is to share the project’s conventions and file formats while keeping each application’s Python environment separate.
+
+### Where I’d run each tool
+
+| Tool | Where | Why |
+|---|---|---|
+| ArcGIS Pro 3.5 + ArcPy | Windows | Pro and its Python environment require Windows |
+| QGIS desktop | Windows initially | Straightforward GUI, graphics, and access to the same files as Pro |
+| Blender | Windows | Straightforward GPU setup and desktop integration |
+| GDAL, Rasterio, GeoPandas, PDAL, notebooks | WSL2 | Convenient Linux tooling and automation |
+| PyQGIS scripts | Wherever the relevant QGIS installation lives | PyQGIS depends on QGIS’s native libraries |
+| VS Code | Windows, with the WSL extension | Opens either a local Windows workspace or a remote WSL workspace |
+
+**Ubuntu 26.04 can be your WSL distro**, but check that the QGIS, GDAL, and PDAL versions you want have suitable packages. Choose the distro around those dependencies; an older supported LTS can be easier when tutorials or package repositories haven’t caught up.
+
+QGIS through WSLg is an option, but I wouldn’t make it a prerequisite for getting started.
+
+### Use separate VS Code windows and Python environments
+
+You’d normally have two VS Code windows:
+
+- A **local Windows window** for ArcPy work.
+- A **WSL-connected window** for the Linux pipeline.
+
+For ArcPy, clone Pro’s `arcgispro-py3` environment using ArcGIS Pro’s environment manager, then select that clone’s Python interpreter in the Windows VS Code window. Avoid modifying Pro’s default environment or upgrading its dependencies indiscriminately.
+
+In WSL, create an independent environment using something like **conda-forge with micromamba**, particularly if you want GDAL, PDAL, and other compiled geospatial dependencies together.
+
+Keep these environments separate:
+
+```text
+ArcPy environment       → managed around ArcGIS Pro
+Open-source environment → managed in WSL
+PyQGIS environment      → tied to a QGIS installation
+Blender Python          → bundled with Blender
+```
+
+Installing `qgis` or `arcpy` into an ordinary virtual environment isn’t a substitute for their application installations. Blender also has its own Python; exchange files with your processing pipeline before trying to unify its dependencies.
+
+### One repository, two working copies
+
+**Use one Git repository with a Windows clone and a WSL clone.** That gives each toolchain a native filesystem:
+
+```text
+Windows: C:\dev\terrain-lab
+WSL:     ~/src/terrain-lab
+```
+
+Sync code through Git commits and a remote. The two clones can be on different commits, so commit and pull before switching environments.
+
+This is generally smoother than having Windows and Linux tools both modify one checkout under `/mnt/c/...`. A single Windows checkout accessed from WSL is workable for a small experiment, but Linux filesystem performance, file permissions, and environment folders can become annoying.
+
+A useful repository structure is:
+
+```text
+terrain-lab/
+├── README.md
+├── environments/
+│   ├── opensource.yml
+│   └── arcpy-setup.md
+├── scripts/
+│   ├── arcpy/
+│   ├── qgis/
+│   ├── processing/
+│   └── blender/
+├── projects/
+│   ├── arcgis/
+│   ├── qgis/
+│   └── blender/
+├── config/
+│   └── example.toml
+├── data/
+│   ├── raw/
+│   └── derived/
+├── outputs/
+├── .gitignore
+└── .gitattributes
+```
+
+Commit scripts, environment definitions, small configuration files, documentation, and suitable project files. Generally ignore:
+
+- Python environments and caches.
+- Downloaded terrain, imagery, and LiDAR.
+- Generated meshes, renders, and temporary datasets.
+- Credentials, local path settings, application locks, and backups.
+
+QGIS `.qgz`, ArcGIS `.aprx`, and Blender `.blend` files are binary or packaged files that Git cannot meaningfully merge. You can version them, using Git LFS when warranted, but avoid editing the same project file concurrently.
+
+### Share data separately from code
+
+For a single workstation, a shared Windows data directory is convenient:
+
+```text
+Windows: D:\GISData\terrain-lab
+WSL:     /mnt/d/GISData/terrain-lab
+```
+
+Keep the data root in a local configuration file or environment variable, rather than hardcoding it throughout your scripts. Let each clone point at the same dataset using its own path.
+
+For heavy Linux processing, stage inputs on WSL’s Linux filesystem, process there, and copy the deliverables back. Avoid having Pro and QGIS write to the same dataset simultaneously.
+
+Use interoperable handoff formats:
+
+| Data | Practical handoff |
+|---|---|
+| Vector features | GeoPackage |
+| Elevation and imagery | GeoTIFF |
+| Point clouds | LAS/LAZ |
+| Attribute tables | CSV or Parquet, depending on tool support |
+| Geometry for Blender | A deliberately chosen mesh format, such as OBJ or glTF |
+
+Keep file geodatabases where Pro needs them, but use explicit exports as the boundary between pipelines.
+
+### Establish the coordinate rules early
+
+For this kind of project, coordinate handling matters more than the operating-system split:
+
+1. Choose an appropriate **projected CRS in metres**.
+2. Record horizontal and vertical units, including the elevation datum where known.
+3. Define a **local origin for Blender**, subtracting it from the GIS coordinates.
+4. Save that origin and CRS alongside the exported geometry so you can reverse the transformation.
+
+For example, both your ArcPy and open-source pipelines should read the same configuration describing the study area, target CRS, raster resolution, and Blender origin.
+
+**My starting setup would be Windows Pro + QGIS + Blender, WSL2 for processing, and one repo with two clones.** For your first terrain diorama, make both GIS toolchains produce the same clipped DEM and route layer, then feed those into one Blender scene. That gives you a useful comparison without building two entirely separate projects.
+
+What are some cool GISey things I can do with Blender?
+Blender is a surprisingly capable GIS playground — you get a full 3D renderer, animation engine, and Python scripting environment bolted onto your spatial data. Here are some of the cooler things people do:
+
+**1. Fly-throughs of real terrain**
+With the free, open-source **BlenderGIS** add-on, you can stream satellite basemaps straight into the viewport (Google, Bing, OSM, or custom WMS/WMTS servers), pull SRTM elevation data, and turn any real place into an animated flyover — something QGIS can't do without serious effort. BlenderGIS maintains true georeferencing (EPSG/PROJ), so layers snap together with correct CRS alignment.
+
+**2. Instant 3D cities from OpenStreetMap**
+Query OSM on the fly, extrude building footprints using real-world height tags, and generate road networks. In about 15 minutes you can have a renderable 3D model of any city on Earth — great for urban visualization and skyline animations.
+
+**3. Terrain from any DEM or heightmap**
+A Displace modifier converts a grayscale heightmap (GeoTIFF, 16-bit PNG, etc.) into 3D terrain. Pro tips: use 16-bit or higher images to avoid terracing artifacts, and set the image color space to Non-Color so gamma doesn't distort elevations.
+
+**4. Erosion simulation for geology-flavored art**
+Hydraulic/thermal erosion solvers (like ANTS Terrain Eroder or geometry-nodes setups) turn lumpy noise into realistically weathered mountain ranges — fun for fictional worlds, but also genuinely useful for illustrating geomorphology concepts like drainage basins and sediment transport.
+
+**5. Shadow and solar analysis with animation**
+Keyframe the sun angle across a year and render shadow studies for buildings — a poor-man's (actually free-man's) Ladybug/Radiance-style workflow, and it looks gorgeous in Cycles.
+
+**6. Volumetric atmosphere over real terrain**
+Stack volumetric fog/clouds over your GIS-imported terrain and animate a "satellite falling toward the ground" shot. Blender's atmosphere rendering is light-years ahead of anything in traditional GIS.
+
+**7. Point clouds and LiDAR**
+Import LAS/LAZ (via BlenderGIS or Meshlab conversion) and visualize LiDAR data — buildings, forests, power line corridors — with proper depth and lighting instead of a flat grey point soup.
+
+**8. 3D-printable terrain and city models**
+Decimate your terrain mesh, add a solid base, and export STL for 3D printing. Printed topography models make excellent gifts and teaching props.
+
+**9. Geometry Nodes for parametric GIS art**
+Drive terrain generation, building scatter, and vegetation placement from fields and textures — fully non-destructive, with sliders for real-time exploration.
+
+**10. Scripted batch pipelines**
+Since Blender ships with Python, you can automate entire workflows: pull a bounding box of data, generate terrain + buildings + texture, and batch-render hundreds of locations overnight.
+
+A good first project: pick your hometown in BlenderGIS, import the basemap, pull SRTM, drop in OSM buildings, add a sun and some volumetric fog, and render a slow dolly shot at sunrise. It'll take an evening and produce something genuinely impressive.
+
+One caveat: BlenderGIS imports well but exports poorly — georeferencing metadata doesn't survive trips back out through OBJ/FBX, so treat Blender as the visualization end of a pipeline (QGIS/FME → Blender), not the other way around.
+
+If I wanted to use both ArcGIS Pro and QGIS to explore this, how would I set up the vscode environment? Would I have one WIndows one for ArcGIS Pro 3.5 and an Ubuntu 26.04 on WSL2 for the rest? How would I manage the repo?
+
+Yes, that split is exactly the right instinct — but the execution details matter. Here's how I'd do it.
+
+## High-level architecture
+
+You don't need two VS Code installations. Install **VS Code on Windows once**, plus the **Remote – WSL extension**. One git repo, two interpreter contexts:
+
+- **Window A (local):** Windows conda env with `arcpy` (ArcGIS Pro 3.5)
+- **Window B (Remote-WSL):** Ubuntu conda env with QGIS + the open-source geospatial stack
+
+A VS Code window is either local or remote — it can't mix both — so two windows is the honest answer. Both open the same files, so edits sync instantly.
+
+## The Windows side (ArcGIS Pro)
+
+1. **Clone the default Pro environment first** — don't develop against `arcgispro-py3` directly, or a Pro update can break your setup:
+   ```
+   "C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\conda.exe" create --name gis-dev --clone arcgispro-py3
+   proswap gis-dev
+   ```
+2. In the local VS Code window, set the interpreter to `C:\Program Files\ArcGIS\Pro\bin\Python\envs\gis-dev\python.exe`.
+3. `arcpy` lives at `C:\Program Files\ArcGIS\Pro\Resources\ArcPy` — it's on the path automatically once you use that interpreter. `import arcpy` outside Pro works fine; just don't try to run it in WSL. Ever. It's Windows-only, full stop.
+
+## The WSL2 side (QGIS + friends)
+
+Since you're on Windows 11 (required for WSLg GUI), QGIS works fine in WSL2:
+
+```bash
+# install mamba/micromamba first, then:
+micromamba create -n qgis -c conda-forge qgis rasterio geopandas xarray rioxarray dask
+micromamba activate qgis
+qgis   # launches via WSLg
+```
+
+In the Remote-WSL window, select the `qgis` env as your interpreter. Two practical notes:
+
+- For scripted work, prefer **`qgis_process`** (CLI that ships with QGIS) over launching the GUI — headless, scriptable, no WSLg overhead.
+- GUI QGIS in WSLg works but is sluggish for heavy projects. Fine for occasional use; annoying daily. If you fall into that pattern, install QGIS natively on Windows via OSGeo4W instead and WSL becomes purely a Python/analytics environment.
+
+## Repo management — the real decision
+
+The awkward bit: WSL2 file IO across `/mnt/c/` is slow, and Windows tools are flaky with `\\wsl$` UNC paths. My recommendation: **repo lives on the Windows side** (`C:\code\gis-explore`), WSL accesses it via `/mnt/c/code/gis-explore`. Code edits and git operations are fine over `/mnt/c`; what hurts is heavy data IO — so keep rasters/large GeoPackages in whichever environment is actively crunching them and treat them as external to the repo.
+
+Force consistent line endings so Windows Python and Linux Python don't fight:
+
+```gitattributes
+* text=auto eol=lf
+*.py text eol=lf
+```
+
+## Repo layout — isolate the incompatible parts
+
+```
+gis-explore/
+├── .gitattributes
+├── environment.yml          # WSL conda env (qgis, rasterio, ...)
+├── README.md
+├── src/
+│   ├── common/              # pure Python, runs anywhere
+│   │   └── terrain_utils.py
+│   ├── windows/             # arcpy-dependent, never imported on Linux
+│   │   └── pro_analysis.py
+│   └── linux/               # qgis/PyQGIS or heavy-raster work
+│       └── qgis_pipeline.py
+├── notebooks/
+└── data/                    # small sample data only; gitignore the big stuff
+```
+
+Two disciplines that will save you pain:
+
+1. **Never let `src/windows/` and `src/linux/` import each other.** If logic is shared, lift it into `src/common/`.
+2. **Never hardcode absolute paths.** Derive everything from the repo root:
+   ```python
+   from pathlib import Path
+   ROOT = Path(__file__).resolve().parents[2]
+   dem = ROOT / "data" / "srtm.tif"
+   ```
+
+## Per-window interpreter settings
+
+Local window (`.vscode/settings.json` in the repo — VS Code ignores it in the WSL window's context... actually it doesn't ignore it, which is a trap. Better to use workspace files):
+
+Save two workspace files at the repo root:
+
+```jsonc
+// gis-windows.code-workspace
+{ "folders": [{ "path": "." }],
+  "settings": { "python.defaultInterpreterPath":
+    "C:\\Program Files\\ArcGIS\\Pro\\bin\\Python\\envs\\gis-dev\\python.exe" } }
+```
+
+```jsonc
+// gis-wsl.code-workspace
+{ "folders": [{ "path": "." }],
+  "settings": { "python.defaultInterpreterPath":
+    "/home/you/micromamba/envs/qgis/bin/python" } }
+```
+
+Open each with *File → Open Workspace from File*. Same folder, same git repo, different default interpreters, and each window politely stays in its lane.
+
+## One honest simplification
+
+If it turns out 90% of your work is data prep + scripting and only occasionally clicking in a GUI, consider skipping WSL entirely: ArcGIS Pro conda env **and** QGIS-from-conda-forge on Windows both selectable as interpreters in a single VS Code window, no dual-boot mental model. WSL2 earns its complexity when you want Linux-native tooling (GDAL builds, `rio`, Dask clusters, Docker) or you're deliberately keeping Pro's Python environment quarantined from everything else. Given you said "explore," I'd start with the Windows-only version and graduate to WSL when you hit a concrete need — but the two-window setup above is solid if you'd rather build it once.

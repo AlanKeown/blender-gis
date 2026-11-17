@@ -1,0 +1,19 @@
+# Node / sites
+node_modules/
+.svelte-kit/
+build/
+dist/
+
+# Python
+__pycache__/
+.venv/
+
+# Local config and secrets
+config/local.toml
+.env
+
+# Data and renders (kept outside Git)
+*.tif
+*.laz
+*.blend1
+renders/
