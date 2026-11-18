@@ -9,3 +9,9 @@ overrides:
   # @cii/svelte depends on "@cii/tokens": "0.2.0". Force the workspace copy so pnpm
   # never looks for it in the npm registry.
   '@cii/tokens': 'workspace:*'
+
+# pnpm runs no dependency build scripts unless they're listed here.
+allowBuilds:
+  # Through @sveltejs/enhanced-img (SveltePress). Its script only checks for a prebuilt
+  # binary (@img/sharp-*) and builds from source if none is found, so it isn't needed.
+  sharp: false
