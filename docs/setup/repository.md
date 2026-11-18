@@ -36,7 +36,7 @@ Two rules keep the cross-platform split sane:
 
 ```text
 Windows:  C:\Projects\AlanKeown_git\blender-gis     (Blender, QGIS GUI, ArcPy)
-WSL:      ~/src/blender-gis                          (geo pipeline, tests, Node.js sites)
+WSL:      ~/projects/javascript/alankeown_git/blender-gis   (geo pipeline, tests, Node.js sites)
 Remote:   GitHub (origin)
 ```
 
@@ -61,13 +61,13 @@ cd C:\Projects\AlanKeown_git\blender-gis
 git init
 git add .
 git commit -m "Initial commit"
-gh repo create blender-gis --private --source . --push   # or add a remote manually
+gh repo create blender-gis --public --source . --remote origin --push   # or add a remote manually
 ```
 
 ```bash
 # WSL: second working copy
-mkdir -p ~/src && cd ~/src
-git clone git@github.com:<you>/blender-gis.git
+cd ~/projects/javascript/alankeown_git
+gh repo clone AlanKeown/blender-gis
 cd blender-gis   # then create config/local.toml with this machine's paths
 ```
 

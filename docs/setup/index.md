@@ -20,8 +20,8 @@ runs the open-source processing pipeline, headless jobs and the documentation si
 │  Blender 5.2 Linux binary (headless -b, Cycles on CUDA/OptiX)            │
 │  Node.js: SveltePress docs · SvelteKit demo site · pre-commit            │
 │                                                                          │
-│  ~/src/blender-gis        ← WSL working copy (ext4)                      │
-│  ~/scratch                ← fast staging for heavy processing            │
+│  ~/projects/javascript/alankeown_git/blender-gis ← WSL working copy (ext4)│
+│  ~/scratch ← fast staging for heavy processing                           │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 

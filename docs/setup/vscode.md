@@ -6,7 +6,7 @@ local (Windows) or remote (WSL), never both, so you work with two windows:
 | Window | Opened from | Folder | Interpreter | Used for |
 |---|---|---|---|---|
 | **Windows** | A Windows workspace file, e.g. `blender-gis.windows.code-workspace` | `C:\Projects\AlanKeown_git\blender-gis` | A Windows venv with Blender type stubs, or the ArcGIS Pro clone env | Blender scripts (run in Blender), ArcPy, QGIS GUI-side scripts |
-| **WSL** | A WSL workspace file, e.g. `code ~/src/blender-gis/blender-gis.wsl.code-workspace` from Ubuntu | `~/src/blender-gis` | `~/micromamba/envs/bgis/bin/python` | Geo pipeline, tests, SveltePress and SvelteKit sites |
+| **WSL** | A WSL workspace file, e.g. `code ~/projects/javascript/alankeown_git/blender-gis/blender-gis.wsl.code-workspace` from Ubuntu | `~/projects/javascript/alankeown_git/blender-gis` | `~/micromamba/envs/bgis/bin/python` | Geo pipeline, tests, SveltePress and SvelteKit sites |
 
 ## Workspace files, not `.vscode/settings.json`, for interpreters
 
