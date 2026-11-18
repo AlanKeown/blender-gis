@@ -1,6 +1,7 @@
 # Check, build and deploy the docs site (ADR 0009).
-# Pull requests run the checks and build only. Pushes to main also deploy to Cloudflare
-# Workers, using the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets.
+# Pull requests run the checks and build only. Pushes to main, and manual runs started on
+# main (gh workflow run docs.yml --ref main), also deploy to Cloudflare Workers, using the
+# CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets.
 # Forks don't receive secrets, so their runs build but never deploy.
 name: Docs
 
@@ -58,7 +59,8 @@ jobs:
         run: pnpm build:docs
 
       - name: Deploy to Cloudflare
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        # Pushes to main deploy; so does a manual run started on main.
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         run: pnpm deploy:docs
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
