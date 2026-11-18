@@ -15,3 +15,7 @@ allowBuilds:
   # Through @sveltejs/enhanced-img (SveltePress). Its script only checks for a prebuilt
   # binary (@img/sharp-*) and builds from source if none is found, so it isn't needed.
   sharp: false
+  # Through wrangler. Both scripts check the platform binary that comes as an optional
+  # dependency and fetch it from the npm registry only if it's missing.
+  esbuild: true
+  workerd: true

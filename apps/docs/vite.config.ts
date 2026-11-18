@@ -15,7 +15,8 @@ export default defineConfig({
           'A showcase of what Blender can usefully do with geospatial data.'
       },
       svelteKitOptions: {
-        adapter: adapter()
+        // 404.html lets Cloudflare show a themed page for unknown paths (wrangler.jsonc).
+        adapter: adapter({ fallback: '404.html' })
       },
       theme: defaultTheme({
         highlighter: {

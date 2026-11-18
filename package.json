@@ -9,6 +9,8 @@
   "scripts": {
     "dev:docs": "pnpm --filter @blender-gis/docs dev",
     "build:docs": "pnpm --filter @blender-gis/docs build",
+    "preview:docs": "pnpm --filter @blender-gis/docs preview",
+    "deploy:docs": "pnpm --filter @blender-gis/docs run deploy:cloudflare",
     "build:design": "pnpm --filter @cii/svelte build",
     "check": "pnpm --filter \"./apps/*\" check",
     "format": "prettier --write .",
