@@ -67,13 +67,43 @@ gh repo create blender-gis --public --source . --remote origin --push   # or add
 ```
 
 ```bash
-# WSL: second working copy
+# WSL: second working copy, including the design-system submodule
 cd ~/projects/javascript/alankeown_git
-gh repo clone AlanKeown/blender-gis
+gh repo clone AlanKeown/blender-gis -- --recurse-submodules
 cd blender-gis   # then create config/local.toml with this machine's paths
 ```
 
 Create a separate `config/local.toml` on Windows, with Windows paths.
+
+### The design-system submodule
+
+The sites use the author's design system,
+[`cii-design-system`](https://github.com/AlanKeown/cii-design-system), as a Git submodule
+at `vendor/cii-design-system` (see
+[decision 0008](/decisions/0008-design-system-consumption/)). Cloning with
+`--recurse-submodules`, as above, fetches it. In a clone made without that flag, run:
+
+```bash
+git submodule update --init
+```
+
+The submodule is pinned to a specific commit. When a pull moves that pin, update the
+submodule too; `git pull --recurse-submodules` does both in one step. The Windows clone
+only needs the submodule if you build the sites there.
+
+### Running the docs site
+
+In the WSL clone, after setting up Node.js and pnpm (see
+[WSL step 5](/setup/wsl/)):
+
+```bash
+pnpm install
+pnpm dev:docs     # development server
+pnpm build:docs   # static build in apps/docs/build/
+```
+
+Before committing, `pnpm format:check`, `pnpm lint` and `pnpm check` run the same checks
+as CI.
 
 ## Line endings
 

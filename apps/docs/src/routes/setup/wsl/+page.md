@@ -132,9 +132,20 @@ bpy.context.scene.cycles.device = "GPU"
 ## 5. Node.js for the SveltePress and SvelteKit sites
 
 The documentation (SveltePress) and demo site (SvelteKit) need Node.js, which is separate
-from the conda geo stack. Install a current LTS Node.js in WSL with your preferred version
-manager. With `networkingMode=mirrored`, dev servers started in WSL are reachable from
-Windows browsers at `localhost`.
+from the conda geo stack. Install it in WSL with [nvm](https://github.com/nvm-sh/nvm). The
+repository pins the Node.js version in `.nvmrc` and the pnpm version in `package.json`, so
+once you've cloned it (see [Repository](/setup/repository/)), run this in the WSL clone:
+
+```bash
+nvm install            # installs and selects the version in .nvmrc
+corepack enable pnpm   # pnpm, at the version pinned in package.json
+```
+
+The sites use pnpm only, not npm or yarn. When you later open a new shell in the repo, run
+`nvm use` to select the pinned version again.
+
+With `networkingMode=mirrored`, dev servers started in WSL are reachable from Windows
+browsers at `localhost`.
 
 ## 6. Where to put data
 
