@@ -52,6 +52,10 @@ Key points, in summary (the records themselves are authoritative):
   between pages with route paths such as `/guide/capabilities/`. Keep meaning when
   editing; ask before restructuring or rewriting.
 - New pages also need an entry in `apps/docs/navigation.ts`.
+- The docs site has a strict Content Security Policy. `apps/docs/scripts/add-csp.ts`
+  adds it to each page after the build, hashing every inline script; other headers are
+  in `apps/docs/static/_headers`. Anything loaded from another origin (fonts, analytics,
+  embeds) is blocked until the policy allows it, so change the policy deliberately.
 
 ## Tools
 
