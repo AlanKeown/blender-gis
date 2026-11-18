@@ -39,7 +39,7 @@ blender-gis/
 Two working copies, synced through GitHub:
 
 - **Windows:** `C:\Projects\AlanKeown_git\blender-gis`, for Blender, QGIS and ArcPy work.
-- **WSL:** `~/src/blender-gis` on ext4, for Node.js, the sites and the geospatial
+- **WSL:** `~/projects/javascript/alankeown_git/blender-gis` on ext4, for Node.js, the sites and the geospatial
   pipeline.
 
 ## Rationale
