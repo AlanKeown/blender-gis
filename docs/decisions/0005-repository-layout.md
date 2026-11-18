@@ -33,6 +33,7 @@ blender-gis/
 │   └── demo/        SvelteKit demo site
 ├── packages/        shared Svelte components used by both sites (optional, added as needed)
 ├── pipeline/        Python: shared helpers, GIS and Blender scripts, per-project configs
+├── vendor/          Git submodules, e.g. cii-design-system (see 0008)
 └── README.md, research.txt, repo-level config
 ```
 
