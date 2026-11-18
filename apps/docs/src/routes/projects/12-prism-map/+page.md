@@ -1,4 +1,6 @@
-# 12 3D thematic (prism) maps
+---
+title: 12 3D thematic (prism) maps
+---
 
 | | |
 |---|---|

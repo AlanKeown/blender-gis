@@ -1,9 +1,11 @@
-# Toolchain
+---
+title: Toolchain
+---
 
 Status as checked in **November 2026**. "Verified" means confirmed against the project's own
 page or a reliable listing. "Check" means it exists but compatibility with the versions
 below should be tested before you depend on it. See
-[Research validation](../reference/research-validation.md) for the evidence.
+[Research validation](/reference/research-validation/) for the evidence.
 
 ## Core applications
 

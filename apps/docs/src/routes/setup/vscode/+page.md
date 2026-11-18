@@ -1,4 +1,6 @@
-# VS Code
+---
+title: VS Code
+---
 
 Install VS Code **once, on Windows**, with the **WSL** extension. A VS Code window is either
 local (Windows) or remote (WSL), never both, so you work with two windows:

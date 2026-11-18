@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import { defaultTheme } from '@sveltepress/theme-default';
 import { sveltepress } from '@sveltepress/vite';
 import { defineConfig } from 'vite';
+import { navbar, sidebar } from './navigation.ts';
 
 // SvelteKit 3 reads no svelte.config.js: Kit options go in `svelteKitOptions`.
 // Don't add a separate sveltekit() plugin alongside sveltepress().
@@ -36,8 +37,9 @@ export default defineConfig({
             'md'
           ]
         },
-        navbar: [],
-        sidebar: {},
+        navbar,
+        sidebar,
+        github: 'https://github.com/AlanKeown/blender-gis',
         // Hex values mirror the cii-design-system docs site (ADR 0008).
         themeColor: {
           light: '#F5F7FB',

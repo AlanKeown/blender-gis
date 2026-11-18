@@ -1,4 +1,6 @@
-# Blender for GIS
+---
+title: Blender for GIS
+---
 
 A showcase of what Blender can usefully do with geospatial data, and of how to build a
 reproducible Windows + WSL2 environment to do it.
@@ -17,23 +19,23 @@ checking data with Blender for geometry, light, motion and output.
 
 ## Where to start
 
-- **[Guide](guide/index.md)**: What Blender adds to a GIS workflow, the toolchain, and the coordinate rules that keep everything aligned.
+- **[Guide](/guide/)**: What Blender adds to a GIS workflow, the toolchain, and the coordinate rules that keep everything aligned.
 
-- **[Setup](setup/index.md)**: Windows 11 for Blender, QGIS and ArcGIS Pro; Ubuntu on WSL2 for the open-source pipeline; VS Code and Git across both.
+- **[Setup](/setup/)**: Windows 11 for Blender, QGIS and ArcGIS Pro; Ubuntu on WSL2 for the open-source pipeline; VS Code and Git across both.
 
-- **[Projects](projects/index.md)**: Twenty demonstrations, from shaded relief and 3D-printed terrain to LiDAR, flood animation, headless batch rendering and AI-driven pipelines.
+- **[Projects](/projects/)**: Twenty demonstrations, from shaded relief and 3D-printed terrain to LiDAR, flood animation, headless batch rendering and AI-driven pipelines.
 
-- **[Research validation](reference/research-validation.md)**: A claim-by-claim check of the original research notes, with corrections as at November 2026.
+- **[Research validation](/reference/research-validation/)**: A claim-by-claim check of the original research notes, with corrections as at November 2026.
 
 ## Results gallery
 
 | Project | Status | Preview |
 |---|---|---|
-| [01 Shaded relief](projects/01-shaded-relief.md) | Planned | — |
-| [02 Terrain diorama](projects/02-terrain-diorama.md) | Planned | — |
-| [05 OSM city](projects/05-osm-city.md) | Planned | — |
-| [09 Flood inundation](projects/09-flood-inundation.md) | Planned | — |
-| [13 Route fly-through](projects/13-route-flythrough.md) | Planned | — |
-| [14 LiDAR point cloud](projects/14-lidar-point-cloud.md) | Planned | — |
+| [01 Shaded relief](/projects/01-shaded-relief/) | Planned | — |
+| [02 Terrain diorama](/projects/02-terrain-diorama/) | Planned | — |
+| [05 OSM city](/projects/05-osm-city/) | Planned | — |
+| [09 Flood inundation](/projects/09-flood-inundation/) | Planned | — |
+| [13 Route fly-through](/projects/13-route-flythrough/) | Planned | — |
+| [14 LiDAR point cloud](/projects/14-lidar-point-cloud/) | Planned | — |
 
 Update this table as projects are completed: change the status and add a thumbnail.

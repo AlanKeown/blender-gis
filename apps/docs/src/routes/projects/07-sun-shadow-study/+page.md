@@ -1,4 +1,6 @@
-# 07 Sun and shadow study
+---
+title: 07 Sun and shadow study
+---
 
 | | |
 |---|---|

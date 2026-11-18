@@ -1,4 +1,6 @@
-# AI / MCP integration
+---
+title: AI / MCP integration
+---
 
 An MCP-capable AI client (Claude Desktop, Claude Code, VS Code agents and others) can drive
 **QGIS** for data preparation and **Blender** for scene building at the same time. Both
@@ -47,7 +49,7 @@ claude mcp add -s user qgis -- uvx --from https://github.com/nkarasiak/qgis-mcp/
 |---|---|
 | `gis-mcp` (Shapely, GeoPandas, Rasterio, PyProj, PySAL) | Headless geometry and raster operations without a QGIS window. Complementary; it does not replace the QGIS → Blender hand-off. |
 | MCP for ArcGIS Location Services (Esri, beta) | Geocoding, routing, elevation, static maps. Hosted, Streamable HTTP, needs an ArcGIS Location Platform API key with beta access. |
-| arcgis-mcp-bridge | Agent-run ArcPy geoprocessing with path guards and confirmation gates (Windows + licensed Pro). See [ArcGIS Pro track](arcgis-pro.md). |
+| arcgis-mcp-bridge | Agent-run ArcPy geoprocessing with path guards and confirmation gates (Windows + licensed Pro). See [ArcGIS Pro track](/setup/arcgis-pro/). |
 
 ## Working rules for agents in this repo
 

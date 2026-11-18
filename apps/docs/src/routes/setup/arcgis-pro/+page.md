@@ -1,4 +1,6 @@
-# ArcGIS Pro track (optional)
+---
+title: ArcGIS Pro track (optional)
+---
 
 The core pipeline is QGIS-first. ArcGIS Pro is an optional, parallel preparation path, so
 that each relevant project can show the same inputs prepared with ArcPy. That is useful for

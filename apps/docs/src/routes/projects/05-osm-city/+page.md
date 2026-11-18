@@ -1,4 +1,6 @@
-# 05 Extruded city from OSM and local footprints
+---
+title: 05 Extruded city from OSM and local footprints
+---
 
 | | |
 |---|---|

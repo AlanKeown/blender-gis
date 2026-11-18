@@ -1,4 +1,6 @@
-# Repository
+---
+title: Repository
+---
 
 ## Suggested layout
 
@@ -77,7 +79,7 @@ Create a separate `config/local.toml` on Windows, with Windows paths.
 
 A suggested `.gitattributes` normalises everything to LF except Windows scripts:
 
-```gitattributes
+```text
 * text=auto eol=lf
 *.ps1 text eol=crlf
 *.bat text eol=crlf

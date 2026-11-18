@@ -1,14 +1,16 @@
-# Guide overview
+---
+title: Guide overview
+---
 
 This guide covers four things:
 
-1. **[What can be achieved](capabilities.md)**: the capability map. What Blender adds to
+1. **[What can be achieved](/guide/capabilities/)**: the capability map. What Blender adds to
    GIS, what it does badly, and the categories of work worth showcasing.
-2. **[Toolchain](toolchain.md)**: the add-ons, applications and AI/MCP servers involved,
+2. **[Toolchain](/guide/toolchain/)**: the add-ons, applications and AI/MCP servers involved,
    with their status as checked in November 2026.
-3. **[Conventions](conventions.md)**: coordinate reference systems, local origins,
+3. **[Conventions](/guide/conventions/)**: coordinate reference systems, local origins,
    vertical datums, units and hand-off formats. Get these right before anything else.
-4. **[Setup](../setup/index.md)**: building the Windows 11 + Ubuntu-on-WSL2 development
+4. **[Setup](/setup/)**: building the Windows 11 + Ubuntu-on-WSL2 development
    environment and managing the repository across both.
 
 ## The one-paragraph version
@@ -23,7 +25,7 @@ any project can be regenerated headlessly from a config file.
 
 ## What makes a good showcase project
 
-Each project in the [catalogue](../projects/index.md) is chosen because it demonstrates
+Each project in the [catalogue](/projects/) is chosen because it demonstrates
 at least one thing a GIS package cannot easily do on its own:
 
 | Blender strength | Why it matters for GIS |

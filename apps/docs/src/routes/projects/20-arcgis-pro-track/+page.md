@@ -1,4 +1,6 @@
-# 20 ArcGIS Pro preparation track
+---
+title: 20 ArcGIS Pro preparation track
+---
 
 | | |
 |---|---|

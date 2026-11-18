@@ -1,4 +1,6 @@
-# Windows host
+---
+title: Windows host
+---
 
 Target: Windows 11 64-bit with a current GPU driver (NVIDIA Studio or Game Ready, AMD
 Adrenalin, or Intel Arc). Run PowerShell as your normal user unless stated otherwise.
@@ -65,7 +67,7 @@ Plugins (**Plugins → Manage and Install**):
 
 | Plugin | Use |
 |---|---|
-| QGIS MCP | Lets the AI client drive this QGIS instance (see [AI / MCP](ai-mcp.md)) |
+| QGIS MCP | Lets the AI client drive this QGIS instance (see [AI / MCP](/setup/ai-mcp/)) |
 | QuickOSM | Overpass queries into layers |
 | QuickMapServices | Basemaps for context checks |
 | OpenTopography DEM Downloader | SRTM / Copernicus / NASADEM by extent (API key) |
@@ -78,10 +80,10 @@ New-Item -ItemType Directory -Force C:\GISData\blender-gis\raw, C:\GISData\blend
 ```
 
 The repository already lives at `C:\Projects\AlanKeown_git\blender-gis`. See
-[Repository](repository.md) for how it relates to the WSL clone.
+[Repository](/setup/repository/) for how it relates to the WSL clone.
 
 ## 5. Optional
 
-- **ArcGIS Pro 3.6/3.7**: see [ArcGIS Pro track](arcgis-pro.md).
+- **ArcGIS Pro 3.6/3.7**: see [ArcGIS Pro track](/setup/arcgis-pro/).
 - **ExifTool**: reads photo orientation for project 08.
 - **FFmpeg** (`winget install Gyan.FFmpeg`): assembling and transcoding animation frames.

@@ -1,4 +1,6 @@
-# Data sources
+---
+title: Data sources
+---
 
 Check each dataset's licence and attribution requirements, and record them on the project
 page. Australian sources are listed first because demo sites are in NSW.

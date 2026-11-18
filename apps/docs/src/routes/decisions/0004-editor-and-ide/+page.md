@@ -1,4 +1,6 @@
-# 0004. Editor and IDE: VS Code with two windows and committed portable config
+---
+title: "0004. Editor and IDE: VS Code with two windows and committed portable config"
+---
 
 - **Status:** Accepted
 - **Date:** 2026-11-18

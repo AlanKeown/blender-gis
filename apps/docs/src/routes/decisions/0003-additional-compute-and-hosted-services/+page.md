@@ -1,4 +1,6 @@
-# 0003. Additional compute and hosted services: free tiers, adopted selectively
+---
+title: "0003. Additional compute and hosted services: free tiers, adopted selectively"
+---
 
 - **Status:** Accepted
 - **Date:** 2026-11-18

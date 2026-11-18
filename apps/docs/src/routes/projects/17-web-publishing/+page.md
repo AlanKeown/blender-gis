@@ -1,4 +1,6 @@
-# 17 Publishing 3D to the web
+---
+title: 17 Publishing 3D to the web
+---
 
 | | |
 |---|---|

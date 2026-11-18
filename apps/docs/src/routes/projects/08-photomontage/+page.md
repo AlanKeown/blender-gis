@@ -1,4 +1,6 @@
-# 08 Photomontage from geotagged photos
+---
+title: 08 Photomontage from geotagged photos
+---
 
 | | |
 |---|---|

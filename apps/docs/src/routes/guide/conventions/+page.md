@@ -1,4 +1,6 @@
-# Conventions
+---
+title: Conventions
+---
 
 Coordinate handling matters more than any tool choice. Every project in this repo follows
 these rules, and every project config records them.
@@ -58,7 +60,7 @@ nodata = -9999
 ```
 
 Keep machine-specific paths (data roots, executables) out of Git, e.g. in a git-ignored
-`config/local.toml`. See [Repository](../setup/repository.md).
+`config/local.toml`. See [Repository](/setup/repository/).
 
 ## 5. Hand-off formats
 

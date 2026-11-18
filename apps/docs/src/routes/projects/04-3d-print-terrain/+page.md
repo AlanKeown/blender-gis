@@ -1,4 +1,6 @@
-# 04 3D-printable terrain or catchment tile
+---
+title: 04 3D-printable terrain or catchment tile
+---
 
 | | |
 |---|---|

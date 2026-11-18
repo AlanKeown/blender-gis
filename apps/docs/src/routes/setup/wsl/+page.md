@@ -1,4 +1,6 @@
-# WSL2 + Ubuntu 26.04
+---
+title: WSL2 + Ubuntu 26.04
+---
 
 ## 1. Install the distro
 

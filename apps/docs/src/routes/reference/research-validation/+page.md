@@ -1,4 +1,6 @@
-# Research validation
+---
+title: Research validation
+---
 
 `research.txt` collects several AI-chat answers given in late 2026. They overlap and
 sometimes contradict each other. This page checks each substantive claim against primary
@@ -61,10 +63,10 @@ or reliable sources as at **17 November 2026**.
 
 | Claim | Verdict | Finding |
 |---|---|---|
-| Windows for Pro, WSL2 for the Linux tooling | ✅ | Adopted, with Blender's GUI and QGIS's GUI also on Windows (see [Setup](../setup/index.md)). |
+| Windows for Pro, WSL2 for the Linux tooling | ✅ | Adopted, with Blender's GUI and QGIS's GUI also on Windows (see [Setup](/setup/)). |
 | One VS Code install with the WSL extension; a window is either local or remote | ✅ | Two windows, two workspace files. |
 | "VS Code ignores `.vscode/settings.json` in the WSL window… actually it doesn't" | ✏️ | The settings file is shared by whoever opens the folder. Keep interpreter paths in per-OS workspace files instead. |
-| Keep the repo in WSL ext4 / keep it on Windows / use two clones | ⚖️ | The notes recommend all three. **Resolution:** two clones synced through a remote, data outside Git in a shared Windows folder. See [Repository](../setup/repository.md). |
+| Keep the repo in WSL ext4 / keep it on Windows / use two clones | ⚖️ | The notes recommend all three. **Resolution:** two clones synced through a remote, data outside Git in a shared Windows folder. See [Repository](/setup/repository/). |
 | Windows apps can open `\\wsl.localhost\Ubuntu-26.04\…` "seamlessly" | ✏️ | It works, but many GIS desktop apps behave poorly with UNC paths and file locking. Avoid it for working data. |
 | QGIS works in WSLg; prefer `qgis_process` for scripting | ✅ | Workable but sluggish. OpenGL under WSLg often falls back to llvmpipe. |
 | Ubuntu 26.04 QGIS packages need checking | ✅ | The Ubuntu archive carries QGIS 3.40.x; OSGeo UbuntuGIS began 26.04 support in June 2026. conda-forge sidesteps this. |

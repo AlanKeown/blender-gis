@@ -1,4 +1,6 @@
-# 19 AI-assisted pipeline via MCP
+---
+title: 19 AI-assisted pipeline via MCP
+---
 
 | | |
 |---|---|

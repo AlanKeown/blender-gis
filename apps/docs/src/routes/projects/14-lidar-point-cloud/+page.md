@@ -1,4 +1,6 @@
-# 14 LiDAR point-cloud visualisation
+---
+title: 14 LiDAR point-cloud visualisation
+---
 
 | | |
 |---|---|

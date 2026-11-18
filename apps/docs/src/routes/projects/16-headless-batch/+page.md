@@ -1,4 +1,6 @@
-# 16 Headless, config-driven batch rendering
+---
+title: 16 Headless, config-driven batch rendering
+---
 
 | | |
 |---|---|

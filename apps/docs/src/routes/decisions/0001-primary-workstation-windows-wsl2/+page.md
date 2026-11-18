@@ -1,4 +1,6 @@
-# 0001. Primary workstation: Windows 11 with WSL2
+---
+title: "0001. Primary workstation: Windows 11 with WSL2"
+---
 
 - **Status:** Accepted
 - **Date:** 2026-11-18

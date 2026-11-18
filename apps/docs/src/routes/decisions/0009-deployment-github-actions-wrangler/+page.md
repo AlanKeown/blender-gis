@@ -1,4 +1,6 @@
-# 0009. Deployment: GitHub Actions with Wrangler to Cloudflare
+---
+title: "0009. Deployment: GitHub Actions with Wrangler to Cloudflare"
+---
 
 - **Status:** Accepted
 - **Date:** 2026-11-18

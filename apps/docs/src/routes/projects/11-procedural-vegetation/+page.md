@@ -1,4 +1,6 @@
-# 11 Rule-based vegetation and rocks
+---
+title: 11 Rule-based vegetation and rocks
+---
 
 | | |
 |---|---|

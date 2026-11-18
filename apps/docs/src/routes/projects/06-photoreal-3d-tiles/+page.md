@@ -1,4 +1,6 @@
-# 06 Photoreal context from 3D Tiles
+---
+title: 06 Photoreal context from 3D Tiles
+---
 
 | | |
 |---|---|

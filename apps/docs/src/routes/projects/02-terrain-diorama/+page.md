@@ -1,4 +1,6 @@
-# 02 Terrain diorama with cut-away
+---
+title: 02 Terrain diorama with cut-away
+---
 
 | | |
 |---|---|

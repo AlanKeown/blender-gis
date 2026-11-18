@@ -26,8 +26,8 @@ The author does the development. Your role is to help and advise, not to drive.
 
 ## Decision records
 
-Read the index first: `docs/decisions/README.md`. The records are moving into
-`apps/docs/src/routes/` as the docs site is built, so check both places.
+Read the index first: `apps/docs/src/routes/decisions/+page.md`. Each record is at
+`apps/docs/src/routes/decisions/<NNNN-slug>/+page.md`.
 
 Key points, in summary (the records themselves are authoritative):
 
@@ -47,9 +47,11 @@ Key points, in summary (the records themselves are authoritative):
 - Package manager: `pnpm` only (no `npm install` or `yarn`).
 - After cloning: `git submodule update --init`.
 - Keep large data and renders out of Git (see `.gitignore` and 0003).
-- Existing reference content in `docs/` (guide, setup, project catalogue, research
-  validation) is source material for the SveltePress site. When content moves, keep its
-  meaning; ask before restructuring or rewriting.
+- Site content lives in `apps/docs/src/routes/<path>/+page.md`, with the page title in
+  `title` front matter (the theme renders it as the H1, so pages have no `# H1`). Link
+  between pages with route paths such as `/guide/capabilities/`. Keep meaning when
+  editing; ask before restructuring or rewriting.
+- New pages also need an entry in `apps/docs/navigation.ts`.
 
 ## Tools
 

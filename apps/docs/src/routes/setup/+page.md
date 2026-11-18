@@ -1,4 +1,6 @@
-# Environment overview
+---
+title: Environment overview
+---
 
 The environment is split by toolchain dependency: **Windows 11** runs the desktop
 applications that need the GPU, a GUI or a Windows-only licence; **Ubuntu 26.04 on WSL2**
@@ -38,12 +40,12 @@ runs the open-source processing pipeline, headless jobs and the documentation si
 
 ## Setup order
 
-1. [Windows host](windows.md): Blender, QGIS, Git, VS Code, uv
-2. [WSL2 + Ubuntu 26.04](wsl.md): distro, micromamba env, headless Blender
-3. [VS Code](vscode.md): two windows, two workspace files
-4. [Repository](repository.md): clones, data root, line endings, LFS
-5. [AI / MCP](ai-mcp.md): Blender and QGIS MCP servers
-6. [ArcGIS Pro track](arcgis-pro.md) (optional)
+1. [Windows host](/setup/windows/): Blender, QGIS, Git, VS Code, uv
+2. [WSL2 + Ubuntu 26.04](/setup/wsl/): distro, micromamba env, headless Blender
+3. [VS Code](/setup/vscode/): two windows, two workspace files
+4. [Repository](/setup/repository/): clones, data root, line endings, LFS
+5. [AI / MCP](/setup/ai-mcp/): Blender and QGIS MCP servers
+6. [ArcGIS Pro track](/setup/arcgis-pro/) (optional)
 
 > **Simplest viable start**
 >
