@@ -1,0 +1,21 @@
+packages:
+  - apps/*
+  - packages/*
+  # Only the design system's packages join the workspace, not its apps (ADR 0008).
+  - vendor/cii-design-system/packages/tokens
+  - vendor/cii-design-system/packages/svelte
+
+overrides:
+  # @cii/svelte depends on "@cii/tokens": "0.2.0". Force the workspace copy so pnpm
+  # never looks for it in the npm registry.
+  '@cii/tokens': 'workspace:*'
+
+# pnpm runs no dependency build scripts unless they're listed here.
+allowBuilds:
+  # Through @sveltejs/enhanced-img (SveltePress). Its script only checks for a prebuilt
+  # binary (@img/sharp-*) and builds from source if none is found, so it isn't needed.
+  sharp: false
+  # Through wrangler. Both scripts check the platform binary that comes as an optional
+  # dependency and fetch it from the npm registry only if it's missing.
+  esbuild: true
+  workerd: true

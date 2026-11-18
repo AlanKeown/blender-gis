@@ -1,0 +1,14 @@
+// Cloudflare Workers with static assets, no Worker script (ADR 0009).
+// Deployed by .github/workflows/docs.yml; credentials come from GitHub secrets.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "blender-gis-docs",
+  "compatibility_date": "2026-11-18",
+  "assets": {
+    "directory": "./build",
+    // Pages are prerendered as /path/index.html, served at /path/.
+    "html_handling": "auto-trailing-slash",
+    // Unknown paths get build/404.html (the adapter's fallback page) with a 404 status.
+    "not_found_handling": "404-page"
+  }
+}

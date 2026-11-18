@@ -1,0 +1,32 @@
+{
+  "name": "blender-gis",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev:docs": "pnpm --filter @blender-gis/docs dev",
+    "build:docs": "pnpm --filter @blender-gis/docs build",
+    "preview:docs": "pnpm --filter @blender-gis/docs preview",
+    "deploy:docs": "pnpm --filter @blender-gis/docs run deploy:cloudflare",
+    "build:design": "pnpm --filter @cii/svelte build",
+    "check": "pnpm --filter \"./apps/*\" check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-svelte": "^3.24.1",
+    "globals": "^17.14.0",
+    "jiti": "^2.7.0",
+    "prettier": "^3.10.1",
+    "prettier-plugin-svelte": "^4.1.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.73.0"
+  }
+}
