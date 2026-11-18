@@ -1,0 +1,19 @@
+{
+  // Recommended extensions (ADR 0004, 0007). VS Code offers these when the folder opens.
+  "recommendations": [
+    // Web: docs and demo sites (WSL window)
+    "svelte.svelte-vscode",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    // Python, GIS and Blender scripts (both windows)
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "JacquesLucke.blender-development",
+    // Config files
+    "tamasfe.even-better-toml",
+    "redhat.vscode-yaml",
+    // Opening the WSL window from Windows
+    "ms-vscode-remote.remote-wsl"
+  ]
+}
