@@ -41,6 +41,8 @@ export default defineConfig({
         navbar,
         sidebar,
         github: 'https://github.com/AlanKeown/blender-gis',
+        // Light-theme symbol; +layout.svelte swaps in the dark one under html.dark.
+        logo: '/blender-gis-symbol.svg',
         // Hex values mirror the cii-design-system docs site (ADR 0008).
         themeColor: {
           light: '#F5F7FB',
