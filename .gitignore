@@ -3,6 +3,7 @@ node_modules/
 .svelte-kit/
 build/
 dist/
+.wrangler/
 
 # Python
 __pycache__/

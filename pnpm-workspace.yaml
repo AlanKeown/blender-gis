@@ -1,0 +1,11 @@
+packages:
+  - apps/*
+  - packages/*
+  # Only the design system's packages join the workspace, not its apps (ADR 0008).
+  - vendor/cii-design-system/packages/tokens
+  - vendor/cii-design-system/packages/svelte
+
+overrides:
+  # @cii/svelte depends on "@cii/tokens": "0.2.0". Force the workspace copy so pnpm
+  # never looks for it in the npm registry.
+  '@cii/tokens': 'workspace:*'
