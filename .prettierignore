@@ -1,0 +1,12 @@
+# Submodules keep their own formatting (ADR 0008)
+vendor/
+
+# Generated output
+build/
+dist/
+.svelte-kit/
+.wrangler/
+pnpm-lock.yaml
+
+# Source material, kept as written
+research.txt
