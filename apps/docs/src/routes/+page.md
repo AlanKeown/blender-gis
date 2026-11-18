@@ -29,13 +29,13 @@ checking data with Blender for geometry, light, motion and output.
 
 ## Results gallery
 
-| Project | Status | Preview |
-|---|---|---|
-| [01 Shaded relief](/projects/01-shaded-relief/) | Planned | — |
-| [02 Terrain diorama](/projects/02-terrain-diorama/) | Planned | — |
-| [05 OSM city](/projects/05-osm-city/) | Planned | — |
-| [09 Flood inundation](/projects/09-flood-inundation/) | Planned | — |
-| [13 Route fly-through](/projects/13-route-flythrough/) | Planned | — |
-| [14 LiDAR point cloud](/projects/14-lidar-point-cloud/) | Planned | — |
+| Project                                                 | Status  | Preview |
+| ------------------------------------------------------- | ------- | ------- |
+| [01 Shaded relief](/projects/01-shaded-relief/)         | Planned | —       |
+| [02 Terrain diorama](/projects/02-terrain-diorama/)     | Planned | —       |
+| [05 OSM city](/projects/05-osm-city/)                   | Planned | —       |
+| [09 Flood inundation](/projects/09-flood-inundation/)   | Planned | —       |
+| [13 Route fly-through](/projects/13-route-flythrough/)  | Planned | —       |
+| [14 LiDAR point cloud](/projects/14-lidar-point-cloud/) | Planned | —       |
 
 Update this table as projects are completed: change the status and add a thumbnail.

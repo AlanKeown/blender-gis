@@ -2,15 +2,15 @@
 title: 17 Publishing 3D to the web
 ---
 
-| | |
-|---|---|
-| **Group** | Pipelines & publishing |
-| **Showcases** | glTF/GLB export for browser viewers; comparison with Qgis2threejs |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | The project 02 diorama or project 05 city |
-| **Tools** | Blender glTF exporter (Draco/meshopt compression), `<model-viewer>` or three.js, QGIS Qgis2threejs |
-| **Suggested code location** | `projects/17-web-publishing/` |
+|                             |                                                                                                    |
+| --------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Group**                   | Pipelines & publishing                                                                             |
+| **Showcases**               | glTF/GLB export for browser viewers; comparison with Qgis2threejs                                  |
+| **Level**                   | Intermediate                                                                                       |
+| **Status**                  | Planned                                                                                            |
+| **Data**                    | The project 02 diorama or project 05 city                                                          |
+| **Tools**                   | Blender glTF exporter (Draco/meshopt compression), `<model-viewer>` or three.js, QGIS Qgis2threejs |
+| **Suggested code location** | `projects/17-web-publishing/`                                                                      |
 
 ## Goal
 
@@ -51,9 +51,9 @@ Interactive embeds on the site
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

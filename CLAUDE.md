@@ -31,16 +31,16 @@ Read the index first: `apps/docs/src/routes/decisions/+page.md`. Each record is 
 
 Key points, in summary (the records themselves are authoritative):
 
-| Record | What it says |
-|---|---|
-| 0001 | Windows 11 + WSL2. Node.js, the sites and the geo pipeline run in WSL. Blender, QGIS and ArcGIS Pro run on Windows. |
-| 0003 | Public repo. Free tiers only. Hosting on Cloudflare; CI on GitHub Actions; large assets in Cloudflare R2, not Git. |
-| 0004 | VS Code: a WSL window for web and pipeline work, a Windows window for Blender, QGIS and ArcPy. Commit portable `.vscode` settings only; machine paths go in per-OS workspace files. |
-| 0005 | One monorepo: `apps/docs`, `apps/demo`, `packages/` (shared components), `pipeline/`, `vendor/` (submodules). Two working copies (Windows and WSL), synced through GitHub. |
-| 0006 | SveltePress for docs, SvelteKit for the demo, a **pnpm workspace** at the repo root. |
-| 0007 | Node.js via **nvm**, pinned in `.nvmrc`. **TypeScript** by default. **Prettier + ESLint**, configured once at the root. |
-| 0008 | `cii-design-system` is the default design system for all sites. It's a **Git submodule** at `vendor/cii-design-system`, consumed as the workspace packages `@cii/tokens` and `@cii/svelte`. |
-| 0009 | Deployment: GitHub Actions + `wrangler deploy` to Cloudflare Workers with static assets. Credentials live in GitHub secrets, never in the repo. |
+| Record | What it says                                                                                                                                                                                |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0001   | Windows 11 + WSL2. Node.js, the sites and the geo pipeline run in WSL. Blender, QGIS and ArcGIS Pro run on Windows.                                                                         |
+| 0003   | Public repo. Free tiers only. Hosting on Cloudflare; CI on GitHub Actions; large assets in Cloudflare R2, not Git.                                                                          |
+| 0004   | VS Code: a WSL window for web and pipeline work, a Windows window for Blender, QGIS and ArcPy. Commit portable `.vscode` settings only; machine paths go in per-OS workspace files.         |
+| 0005   | One monorepo: `apps/docs`, `apps/demo`, `packages/` (shared components), `pipeline/`, `vendor/` (submodules). Two working copies (Windows and WSL), synced through GitHub.                  |
+| 0006   | SveltePress for docs, SvelteKit for the demo, a **pnpm workspace** at the repo root.                                                                                                        |
+| 0007   | Node.js via **nvm**, pinned in `.nvmrc`. **TypeScript** by default. **Prettier + ESLint**, configured once at the root.                                                                     |
+| 0008   | `cii-design-system` is the default design system for all sites. It's a **Git submodule** at `vendor/cii-design-system`, consumed as the workspace packages `@cii/tokens` and `@cii/svelte`. |
+| 0009   | Deployment: GitHub Actions + `wrangler deploy` to Cloudflare Workers with static assets. Credentials live in GitHub secrets, never in the repo.                                             |
 
 ## Conventions
 

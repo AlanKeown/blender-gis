@@ -2,15 +2,15 @@
 title: 06 Photoreal context from 3D Tiles
 ---
 
-| | |
-|---|---|
-| **Group** | Urban & site |
-| **Showcases** | Streaming 3D Tiles into Blender; combining with proposed geometry |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | Google Photorealistic 3D Tiles (API key + billing account) or another 3D Tiles source |
-| **Tools** | Blosm (3D Tiles import) |
-| **Suggested code location** | `projects/06-photoreal-3d-tiles/` |
+|                             |                                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------------- |
+| **Group**                   | Urban & site                                                                          |
+| **Showcases**               | Streaming 3D Tiles into Blender; combining with proposed geometry                     |
+| **Level**                   | Intermediate                                                                          |
+| **Status**                  | Planned                                                                               |
+| **Data**                    | Google Photorealistic 3D Tiles (API key + billing account) or another 3D Tiles source |
+| **Tools**                   | Blosm (3D Tiles import)                                                               |
+| **Suggested code location** | `projects/06-photoreal-3d-tiles/`                                                     |
 
 ## Goal
 
@@ -50,9 +50,9 @@ Before/after stills (with the attribution the terms require)
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

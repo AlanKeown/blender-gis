@@ -1,5 +1,5 @@
 ---
-title: "0007. Web project conventions: nvm, TypeScript, Prettier and ESLint"
+title: '0007. Web project conventions: nvm, TypeScript, Prettier and ESLint'
 ---
 
 - **Status:** Accepted

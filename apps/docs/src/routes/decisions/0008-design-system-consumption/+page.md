@@ -1,5 +1,5 @@
 ---
-title: "0008. Design system: cii-design-system by default, consumed as a Git submodule"
+title: '0008. Design system: cii-design-system by default, consumed as a Git submodule'
 ---
 
 - **Status:** Accepted

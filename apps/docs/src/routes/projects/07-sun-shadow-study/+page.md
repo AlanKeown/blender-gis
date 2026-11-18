@@ -2,15 +2,15 @@
 title: 07 Sun and shadow study
 ---
 
-| | |
-|---|---|
-| **Group** | Urban & site |
-| **Showcases** | Physically placed sun; time-lapse shadows across a day or the solstices |
-| **Level** | Introductory |
-| **Status** | Planned |
-| **Data** | Building massing (project 05 or a proposal), DEM, site latitude and longitude |
-| **Tools** | Blender Sun Position extension, Cycles or EEVEE |
-| **Suggested code location** | `projects/07-sun-shadow-study/` |
+|                             |                                                                               |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| **Group**                   | Urban & site                                                                  |
+| **Showcases**               | Physically placed sun; time-lapse shadows across a day or the solstices       |
+| **Level**                   | Introductory                                                                  |
+| **Status**                  | Planned                                                                       |
+| **Data**                    | Building massing (project 05 or a proposal), DEM, site latitude and longitude |
+| **Tools**                   | Blender Sun Position extension, Cycles or EEVEE                               |
+| **Suggested code location** | `projects/07-sun-shadow-study/`                                               |
 
 ## Goal
 
@@ -24,7 +24,7 @@ Shadow diagrams are a staple of planning applications. Blender produces them qui
 
 1. Set the site's latitude, longitude and UTC offset in Sun Position (Properties → World); set North Offset if the scene isn't grid-north aligned.
 2. Keyframe the time from 09:00 to 15:00; render a plan-view orthographic sequence and a street-level camera.
-3. Overlay the proposal outline and the existing shadow so that the *additional* overshadowing is clear.
+3. Overlay the proposal outline and the existing shadow so that the _additional_ overshadowing is clear.
 4. Cross-check one timestamp against an independent solar calculator.
 
 ## Key techniques
@@ -52,9 +52,9 @@ Shadow diagram sheet, MP4 sweep
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

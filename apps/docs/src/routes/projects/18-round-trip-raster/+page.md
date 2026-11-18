@@ -1,16 +1,16 @@
 ---
-title: "18 Round-trip: Blender render back into GIS"
+title: '18 Round-trip: Blender render back into GIS'
 ---
 
-| | |
-|---|---|
-| **Group** | Pipelines & publishing |
-| **Showcases** | Georeferenced render output; Blender as a raster-production step |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | Project 01 scene |
-| **Tools** | BlenderGIS (georeferenced camera + render), QGIS |
-| **Suggested code location** | `projects/18-round-trip-raster/` |
+|                             |                                                                  |
+| --------------------------- | ---------------------------------------------------------------- |
+| **Group**                   | Pipelines & publishing                                           |
+| **Showcases**               | Georeferenced render output; Blender as a raster-production step |
+| **Level**                   | Intermediate                                                     |
+| **Status**                  | Planned                                                          |
+| **Data**                    | Project 01 scene                                                 |
+| **Tools**                   | BlenderGIS (georeferenced camera + render), QGIS                 |
+| **Suggested code location** | `projects/18-round-trip-raster/`                                 |
 
 ## Goal
 
@@ -49,9 +49,9 @@ GeoTIFF relief + a QGIS layout PDF
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

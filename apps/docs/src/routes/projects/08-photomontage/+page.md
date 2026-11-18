@@ -2,15 +2,15 @@
 title: 08 Photomontage from geotagged photos
 ---
 
-| | |
-|---|---|
-| **Group** | Urban & site |
-| **Showcases** | Camera matching from EXIF/survey; visual impact assessment |
-| **Level** | Advanced |
-| **Status** | Planned |
-| **Data** | Geotagged photographs (EXIF GPS + heading, focal length); DEM; proposal model; surveyed camera positions if available |
-| **Tools** | BlenderGIS (cameras from geotagged photos), ImageGIS2Camera (optional), ExifTool, fSpy (optional) |
-| **Suggested code location** | `projects/08-photomontage/` |
+|                             |                                                                                                                       |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Group**                   | Urban & site                                                                                                          |
+| **Showcases**               | Camera matching from EXIF/survey; visual impact assessment                                                            |
+| **Level**                   | Advanced                                                                                                              |
+| **Status**                  | Planned                                                                                                               |
+| **Data**                    | Geotagged photographs (EXIF GPS + heading, focal length); DEM; proposal model; surveyed camera positions if available |
+| **Tools**                   | BlenderGIS (cameras from geotagged photos), ImageGIS2Camera (optional), ExifTool, fSpy (optional)                     |
+| **Suggested code location** | `projects/08-photomontage/`                                                                                           |
 
 ## Goal
 
@@ -51,9 +51,9 @@ Existing / proposed image pairs with a camera metadata table
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

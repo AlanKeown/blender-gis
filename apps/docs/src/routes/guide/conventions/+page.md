@@ -64,14 +64,14 @@ Keep machine-specific paths (data roots, executables) out of Git, e.g. in a git-
 
 ## 5. Hand-off formats
 
-| Data | Format into Blender | Notes |
-|---|---|---|
-| Elevation | GeoTIFF (Float32), or 16-bit PNG/TIFF for displacement | Set image colour space to **Non-Color**. Never use 8-bit (it produces terracing). |
-| Imagery / rendered maps | GeoTIFF or PNG + world file | Match the DEM extent exactly to simplify UV mapping |
-| Vectors | Shapefile (BlenderGIS imports SHP, not GeoPackage or GeoJSON) | Encode categories as integers; strings do not reach Geometry Nodes |
-| Tabular points | CSV (Geometry Nodes *Import CSV* node) | Numeric columns only; the header row becomes attribute names |
-| Point clouds | LAS/LAZ (Point Cloud IO) or PLY | Thin with PDAL first |
-| Out of Blender | PNG/EXR renders, MP4, glTF/GLB, STL/3MF, georeferenced GeoTIFF | Ship a `*.georef.json` sidecar (CRS + origin) with any mesh |
+| Data                    | Format into Blender                                            | Notes                                                                             |
+| ----------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Elevation               | GeoTIFF (Float32), or 16-bit PNG/TIFF for displacement         | Set image colour space to **Non-Color**. Never use 8-bit (it produces terracing). |
+| Imagery / rendered maps | GeoTIFF or PNG + world file                                    | Match the DEM extent exactly to simplify UV mapping                               |
+| Vectors                 | Shapefile (BlenderGIS imports SHP, not GeoPackage or GeoJSON)  | Encode categories as integers; strings do not reach Geometry Nodes                |
+| Tabular points          | CSV (Geometry Nodes _Import CSV_ node)                         | Numeric columns only; the header row becomes attribute names                      |
+| Point clouds            | LAS/LAZ (Point Cloud IO) or PLY                                | Thin with PDAL first                                                              |
+| Out of Blender          | PNG/EXR renders, MP4, glTF/GLB, STL/3MF, georeferenced GeoTIFF | Ship a `*.georef.json` sidecar (CRS + origin) with any mesh                       |
 
 ## 6. Attribution and licensing
 
@@ -80,4 +80,4 @@ Keep machine-specific paths (data roots, executables) out of Git, e.g. in a git-
   attribution and restrictions on caching and offline use. Check them before publishing
   renders.
 - Government open data: record each licence (often CC BY 4.0) in the project page's
-  *Data* section.
+  _Data_ section.

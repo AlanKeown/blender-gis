@@ -2,15 +2,15 @@
 title: 14 LiDAR point-cloud visualisation
 ---
 
-| | |
-|---|---|
-| **Group** | Analysis you can see |
-| **Showcases** | LAS/LAZ into native point clouds; colour by classification or intensity |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | Classified LAS/LAZ (e.g. state LiDAR tiles via ELVIS) |
-| **Tools** | PDAL (WSL), Blender 5.1+ with Point Cloud IO, Geometry Nodes |
-| **Suggested code location** | `projects/14-lidar-point-cloud/` |
+|                             |                                                                         |
+| --------------------------- | ----------------------------------------------------------------------- |
+| **Group**                   | Analysis you can see                                                    |
+| **Showcases**               | LAS/LAZ into native point clouds; colour by classification or intensity |
+| **Level**                   | Intermediate                                                            |
+| **Status**                  | Planned                                                                 |
+| **Data**                    | Classified LAS/LAZ (e.g. state LiDAR tiles via ELVIS)                   |
+| **Tools**                   | PDAL (WSL), Blender 5.1+ with Point Cloud IO, Geometry Nodes            |
+| **Suggested code location** | `projects/14-lidar-point-cloud/`                                        |
 
 ## Goal
 
@@ -51,9 +51,9 @@ Stills and a reveal animation
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

@@ -1,16 +1,16 @@
 ---
-title: "10 Viewshed: analysis vs experience"
+title: '10 Viewshed: analysis vs experience'
 ---
 
-| | |
-|---|---|
-| **Group** | Analysis you can see |
-| **Showcases** | Validating a GIS viewshed with an eye-level render |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | DEM (+ surface model if available); observer points |
-| **Tools** | QGIS Visibility / gdal_viewshed, Blender |
-| **Suggested code location** | `projects/10-viewshed/` |
+|                             |                                                     |
+| --------------------------- | --------------------------------------------------- |
+| **Group**                   | Analysis you can see                                |
+| **Showcases**               | Validating a GIS viewshed with an eye-level render  |
+| **Level**                   | Intermediate                                        |
+| **Status**                  | Planned                                             |
+| **Data**                    | DEM (+ surface model if available); observer points |
+| **Tools**                   | QGIS Visibility / gdal_viewshed, Blender            |
+| **Suggested code location** | `projects/10-viewshed/`                             |
 
 ## Goal
 
@@ -50,9 +50,9 @@ Paired aerial and panorama renders
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

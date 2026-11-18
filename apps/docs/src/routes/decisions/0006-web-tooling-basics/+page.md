@@ -1,5 +1,5 @@
 ---
-title: "0006. Web tooling: SveltePress and SvelteKit, pnpm workspaces, Node.js in WSL"
+title: '0006. Web tooling: SveltePress and SvelteKit, pnpm workspaces, Node.js in WSL'
 ---
 
 - **Status:** Accepted

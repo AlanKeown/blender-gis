@@ -1,5 +1,5 @@
 ---
-title: "0002. Platform support for readers: reference platform plus portability notes"
+title: '0002. Platform support for readers: reference platform plus portability notes'
 ---
 
 - **Status:** Accepted

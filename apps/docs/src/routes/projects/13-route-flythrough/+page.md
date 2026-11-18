@@ -2,15 +2,15 @@
 title: 13 Route fly-through
 ---
 
-| | |
-|---|---|
-| **Group** | Analysis you can see |
-| **Showcases** | GPX/vector routes on terrain; animated line reveal; follow-path camera |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | GPX track (walk, ride or drive); DEM; orthophoto |
-| **Tools** | QGIS, Blosm (GPX import) or BlenderGIS, Blender curves and constraints |
-| **Suggested code location** | `projects/13-route-flythrough/` |
+|                             |                                                                        |
+| --------------------------- | ---------------------------------------------------------------------- |
+| **Group**                   | Analysis you can see                                                   |
+| **Showcases**               | GPX/vector routes on terrain; animated line reveal; follow-path camera |
+| **Level**                   | Intermediate                                                           |
+| **Status**                  | Planned                                                                |
+| **Data**                    | GPX track (walk, ride or drive); DEM; orthophoto                       |
+| **Tools**                   | QGIS, Blosm (GPX import) or BlenderGIS, Blender curves and constraints |
+| **Suggested code location** | `projects/13-route-flythrough/`                                        |
 
 ## Goal
 
@@ -23,8 +23,8 @@ Movement over real terrain is Blender's strength. QGIS animation can't produce t
 ## Workflow
 
 1. **GIS:** clean the track, reproject it, densify it, and sample DEM elevation onto the vertices.
-2. **Blender:** import as a curve; set bevel for a tube; animate *End Bevel Factor* (or a Geometry Nodes trim) for the reveal.
-3. Camera: *Follow Path* on a smoothed, offset copy of the route, with *Track To* an empty that leads the head of the line.
+2. **Blender:** import as a curve; set bevel for a tube; animate _End Bevel Factor_ (or a Geometry Nodes trim) for the reveal.
+3. Camera: _Follow Path_ on a smoothed, offset copy of the route, with _Track To_ an empty that leads the head of the line.
 4. Drive a text overlay from the animated factor × route length.
 
 ## Key techniques
@@ -51,9 +51,9 @@ MP4 fly-through
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

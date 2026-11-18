@@ -2,15 +2,15 @@
 title: 16 Headless, config-driven batch rendering
 ---
 
-| | |
-|---|---|
-| **Group** | Pipelines & publishing |
-| **Showcases** | Reproducibility: the same script renders any AOI from a TOML config |
-| **Level** | Advanced |
-| **Status** | Planned |
-| **Data** | A list of AOIs (GeoPackage) and the DEM/imagery sources used in project 01 |
-| **Tools** | WSL geo stack, Blender `-b` (Windows or WSL), `bpy` module (optional) |
-| **Suggested code location** | `projects/16-headless-batch/` |
+|                             |                                                                            |
+| --------------------------- | -------------------------------------------------------------------------- |
+| **Group**                   | Pipelines & publishing                                                     |
+| **Showcases**               | Reproducibility: the same script renders any AOI from a TOML config        |
+| **Level**                   | Advanced                                                                   |
+| **Status**                  | Planned                                                                    |
+| **Data**                    | A list of AOIs (GeoPackage) and the DEM/imagery sources used in project 01 |
+| **Tools**                   | WSL geo stack, Blender `-b` (Windows or WSL), `bpy` module (optional)      |
+| **Suggested code location** | `projects/16-headless-batch/`                                              |
 
 ## Goal
 
@@ -51,9 +51,9 @@ A folder of renders plus manifest.json
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

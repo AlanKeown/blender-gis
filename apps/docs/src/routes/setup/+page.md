@@ -29,14 +29,14 @@ runs the open-source processing pipeline, headless jobs and the documentation si
 
 ## Why this split
 
-| Decision | Reason |
-|---|---|
-| Blender GUI on Windows | Native GPU drivers, no WSLg OpenGL fallback. Under WSLg, OpenGL frequently falls back to software rendering (llvmpipe) even when CUDA works. |
-| QGIS GUI on Windows | The QGIS MCP plugin must run inside the QGIS instance the AI client talks to, and the Windows build sees the same files as Blender and Pro |
-| ArcGIS Pro on Windows | Windows 11 only. ArcPy cannot run in WSL. |
-| Geo stack in WSL | conda-forge builds of GDAL/PDAL/QGIS are straightforward on Linux, scriptable, and isolated from Pro's Python |
+| Decision                           | Reason                                                                                                                                                            |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Blender GUI on Windows             | Native GPU drivers, no WSLg OpenGL fallback. Under WSLg, OpenGL frequently falls back to software rendering (llvmpipe) even when CUDA works.                      |
+| QGIS GUI on Windows                | The QGIS MCP plugin must run inside the QGIS instance the AI client talks to, and the Windows build sees the same files as Blender and Pro                        |
+| ArcGIS Pro on Windows              | Windows 11 only. ArcPy cannot run in WSL.                                                                                                                         |
+| Geo stack in WSL                   | conda-forge builds of GDAL/PDAL/QGIS are straightforward on Linux, scriptable, and isolated from Pro's Python                                                     |
 | Headless renders in WSL (optional) | CUDA works in WSL through the Windows driver, so Cycles can render in batch without a GUI. EEVEE needs a working GPU display context, so render EEVEE on Windows. |
-| Docs and demo sites in WSL | Node.js and Git tooling behave as on a Linux CI runner; mirrored networking makes dev servers reachable from Windows browsers |
+| Docs and demo sites in WSL         | Node.js and Git tooling behave as on a Linux CI runner; mirrored networking makes dev servers reachable from Windows browsers                                     |
 
 ## Setup order
 

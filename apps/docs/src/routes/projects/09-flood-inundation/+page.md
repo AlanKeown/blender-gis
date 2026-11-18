@@ -2,15 +2,15 @@
 title: 09 Flood inundation animation
 ---
 
-| | |
-|---|---|
-| **Group** | Analysis you can see |
-| **Showcases** | Communicating modelled water levels; time animation |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | DEM; modelled flood depth or level rasters per time step or AEP (or simple bathtub levels for a demo) |
-| **Tools** | QGIS / GDAL, Blender (displacement, volumetric water material) |
-| **Suggested code location** | `projects/09-flood-inundation/` |
+|                             |                                                                                                       |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Group**                   | Analysis you can see                                                                                  |
+| **Showcases**               | Communicating modelled water levels; time animation                                                   |
+| **Level**                   | Intermediate                                                                                          |
+| **Status**                  | Planned                                                                                               |
+| **Data**                    | DEM; modelled flood depth or level rasters per time step or AEP (or simple bathtub levels for a demo) |
+| **Tools**                   | QGIS / GDAL, Blender (displacement, volumetric water material)                                        |
+| **Suggested code location** | `projects/09-flood-inundation/`                                                                       |
 
 ## Goal
 
@@ -51,9 +51,9 @@ MP4 animation, key-frame stills
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

@@ -1,5 +1,5 @@
 ---
-title: "0004. Editor and IDE: VS Code with two windows and committed portable config"
+title: '0004. Editor and IDE: VS Code with two windows and committed portable config'
 ---
 
 - **Status:** Accepted
@@ -25,8 +25,8 @@ is public (0003), so readers benefit if the editor setup works when they open it
 
 - **Editor:** VS Code, installed once on Windows, with the WSL extension.
 - **Window model:** two windows.
-  - A *Windows-local* window for Blender scripts, ArcPy and QGIS-side scripts.
-  - A *WSL-remote* window for the geospatial pipeline, Node.js, and the docs and demo
+  - A _Windows-local_ window for Blender scripts, ArcPy and QGIS-side scripts.
+  - A _WSL-remote_ window for the geospatial pipeline, Node.js, and the docs and demo
     sites.
 - **Committed config:**
   - `.vscode/settings.json` holds portable settings only.

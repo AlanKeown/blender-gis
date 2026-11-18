@@ -1,5 +1,5 @@
 ---
-title: "0009. Deployment: GitHub Actions with Wrangler to Cloudflare"
+title: '0009. Deployment: GitHub Actions with Wrangler to Cloudflare'
 ---
 
 - **Status:** Accepted

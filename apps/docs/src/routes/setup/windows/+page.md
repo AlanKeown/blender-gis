@@ -26,18 +26,18 @@ directory under `%APPDATA%\Blender Foundation\Blender\<version>`.
 Then, in **Edit → Preferences**:
 
 1. **System → Cycles Render Devices**: choose OptiX (NVIDIA), HIP (AMD) or oneAPI (Intel).
-2. **System → Network**: enable *Allow Online Access* (needed for Extensions, BlenderGIS
+2. **System → Network**: enable _Allow Online Access_ (needed for Extensions, BlenderGIS
    basemaps and the official MCP add-on).
 3. **Get Extensions**: install
-    - *Sun Position*
-    - *A.N.T. Landscape*
-    - *Point Cloud IO* (needs 5.1+)
-    - *3D Print Toolbox*
+   - _Sun Position_
+   - _A.N.T. Landscape_
+   - _Point Cloud IO_ (needs 5.1+)
+   - _3D Print Toolbox_
 4. **Add-ons → ⌄ → Install from Disk…**: install
-    - **BlenderGIS**: the zip from the latest GitHub release of `domlysz/BlenderGIS`.
-      In its preferences, set a **cache folder** (e.g. `C:\GISData\cache\blendergis`) and
-      paste your **OpenTopography API key** (free from opentopography.org).
-    - **Blosm**: the zip from its Gumroad page (the base version is free). Do not unzip it.
+   - **BlenderGIS**: the zip from the latest GitHub release of `domlysz/BlenderGIS`.
+     In its preferences, set a **cache folder** (e.g. `C:\GISData\cache\blendergis`) and
+     paste your **OpenTopography API key** (free from opentopography.org).
+   - **Blosm**: the zip from its Gumroad page (the base version is free). Do not unzip it.
 5. Save preferences.
 
 > **BlenderGIS on Blender 5.x**
@@ -59,19 +59,19 @@ Then, in **Edit → Preferences**:
 Use the **OSGeo4W network installer** from qgis.org (it makes upgrades and running LTR and
 latest side by side easy):
 
-- *Express install* → `QGIS LTR` (3.44) and/or `QGIS` (latest 4.x).
+- _Express install_ → `QGIS LTR` (3.44) and/or `QGIS` (latest 4.x).
 - QGIS 4 keeps its user profiles separate from QGIS 3, so plugins are installed per
   major version.
 
 Plugins (**Plugins → Manage and Install**):
 
-| Plugin | Use |
-|---|---|
-| QGIS MCP | Lets the AI client drive this QGIS instance (see [AI / MCP](/setup/ai-mcp/)) |
-| QuickOSM | Overpass queries into layers |
-| QuickMapServices | Basemaps for context checks |
-| OpenTopography DEM Downloader | SRTM / Copernicus / NASADEM by extent (API key) |
-| Qgis2threejs | Direct three.js / glTF export, used as the comparison in project 17 |
+| Plugin                        | Use                                                                          |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| QGIS MCP                      | Lets the AI client drive this QGIS instance (see [AI / MCP](/setup/ai-mcp/)) |
+| QuickOSM                      | Overpass queries into layers                                                 |
+| QuickMapServices              | Basemaps for context checks                                                  |
+| OpenTopography DEM Downloader | SRTM / Copernicus / NASADEM by extent (API key)                              |
+| Qgis2threejs                  | Direct three.js / glTF export, used as the comparison in project 17          |
 
 ## 4. Folders
 

@@ -2,15 +2,15 @@
 title: 03 Terrain analysis shading
 ---
 
-| | |
-|---|---|
-| **Group** | Terrain & cartography |
-| **Showcases** | Slope, aspect and height shading in nodes; side-by-side comparison with GIS derivatives |
-| **Level** | Introductory |
-| **Status** | Planned |
-| **Data** | DEM; QGIS slope/aspect rasters for comparison |
-| **Tools** | Blender shader nodes, BlenderGIS terrain analysis nodes, QGIS / gdaldem |
-| **Suggested code location** | `projects/03-terrain-analysis-shading/` |
+|                             |                                                                                         |
+| --------------------------- | --------------------------------------------------------------------------------------- |
+| **Group**                   | Terrain & cartography                                                                   |
+| **Showcases**               | Slope, aspect and height shading in nodes; side-by-side comparison with GIS derivatives |
+| **Level**                   | Introductory                                                                            |
+| **Status**                  | Planned                                                                                 |
+| **Data**                    | DEM; QGIS slope/aspect rasters for comparison                                           |
+| **Tools**                   | Blender shader nodes, BlenderGIS terrain analysis nodes, QGIS / gdaldem                 |
+| **Suggested code location** | `projects/03-terrain-analysis-shading/`                                                 |
 
 ## Goal
 
@@ -52,9 +52,9 @@ Comparison figure: Blender vs QGIS
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

@@ -94,14 +94,14 @@ attributes file.
 
 ## What goes in Git, and what doesn't
 
-| Commit | Ignore |
-|---|---|
-| Code, configs, environment files, docs | Downloaded data: DEMs, imagery, LiDAR, OSM extracts |
-| Small sample data (< 5 MB) for tests | Derived rasters, meshes, caches |
-| Result images for the docs and demo sites (optimised JPEG/WebP, ≲ 500 KB each) | Full-resolution renders, frame sequences, EXR |
-| Project `.blend` *templates* only if small | Working `.blend` files, `.blend1` backups |
-| | `config/local.toml`, API keys, `.env` |
-| | QGIS `.qgz~` locks, ArcGIS `.aprx` backups, site build output and `node_modules/` |
+| Commit                                                                         | Ignore                                                                            |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Code, configs, environment files, docs                                         | Downloaded data: DEMs, imagery, LiDAR, OSM extracts                               |
+| Small sample data (< 5 MB) for tests                                           | Derived rasters, meshes, caches                                                   |
+| Result images for the docs and demo sites (optimised JPEG/WebP, ≲ 500 KB each) | Full-resolution renders, frame sequences, EXR                                     |
+| Project `.blend` _templates_ only if small                                     | Working `.blend` files, `.blend1` backups                                         |
+|                                                                                | `config/local.toml`, API keys, `.env`                                             |
+|                                                                                | QGIS `.qgz~` locks, ArcGIS `.aprx` backups, site build output and `node_modules/` |
 
 `.qgz`, `.aprx` and `.blend` files are binary and cannot be merged. Prefer **regenerating
 scenes from scripts** over committing them. If you must version them, use Git LFS and
@@ -117,4 +117,4 @@ keep short MP4/WebM loops under ~10 MB in the demo site's static assets.
 ## Branching
 
 Keep `main` deployable. Use short-lived branches per project (`project/05-osm-city`) and
-merge when the project page's *Results* section is complete.
+merge when the project page's _Results_ section is complete.

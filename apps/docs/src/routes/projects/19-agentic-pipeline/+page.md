@@ -2,15 +2,15 @@
 title: 19 AI-assisted pipeline via MCP
 ---
 
-| | |
-|---|---|
-| **Group** | Pipelines & publishing |
-| **Showcases** | An agent driving QGIS (prep) and Blender (build) through MCP; documenting AI-assisted steps |
-| **Level** | Advanced |
-| **Status** | Planned |
-| **Data** | Any earlier project's inputs |
-| **Tools** | QGIS MCP, Blender Lab MCP or MCP for Blender, an MCP client |
-| **Suggested code location** | `projects/19-agentic-pipeline/` |
+|                             |                                                                                             |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| **Group**                   | Pipelines & publishing                                                                      |
+| **Showcases**               | An agent driving QGIS (prep) and Blender (build) through MCP; documenting AI-assisted steps |
+| **Level**                   | Advanced                                                                                    |
+| **Status**                  | Planned                                                                                     |
+| **Data**                    | Any earlier project's inputs                                                                |
+| **Tools**                   | QGIS MCP, Blender Lab MCP or MCP for Blender, an MCP client                                 |
+| **Suggested code location** | `projects/19-agentic-pipeline/`                                                             |
 
 ## Goal
 
@@ -50,9 +50,9 @@ A results page with a transcript excerpt and a comparison table
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

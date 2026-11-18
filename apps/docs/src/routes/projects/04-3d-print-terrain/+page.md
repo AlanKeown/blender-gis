@@ -2,15 +2,15 @@
 title: 04 3D-printable terrain or catchment tile
 ---
 
-| | |
-|---|---|
-| **Group** | Terrain & cartography |
-| **Showcases** | Mesh preparation for fabrication; scale and exaggeration on a physical object |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | DEM; catchment or island boundary; optional route or stream lines to emboss |
-| **Tools** | QGIS, Blender, 3D Print Toolbox extension, slicer software |
-| **Suggested code location** | `projects/04-3d-print-terrain/` |
+|                             |                                                                               |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| **Group**                   | Terrain & cartography                                                         |
+| **Showcases**               | Mesh preparation for fabrication; scale and exaggeration on a physical object |
+| **Level**                   | Intermediate                                                                  |
+| **Status**                  | Planned                                                                       |
+| **Data**                    | DEM; catchment or island boundary; optional route or stream lines to emboss   |
+| **Tools**                   | QGIS, Blender, 3D Print Toolbox extension, slicer software                    |
+| **Suggested code location** | `projects/04-3d-print-terrain/`                                               |
 
 ## Goal
 
@@ -53,9 +53,9 @@ STL/3MF, photo of the print
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

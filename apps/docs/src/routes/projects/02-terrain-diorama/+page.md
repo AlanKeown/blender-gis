@@ -2,15 +2,15 @@
 title: 02 Terrain diorama with cut-away
 ---
 
-| | |
-|---|---|
-| **Group** | Terrain & cartography |
-| **Showcases** | Draped orthophoto; solid diorama base; geological or hydrological cut-away |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | DEM + orthophoto at matching extent; optional geology polygons or borehole-derived strata depths |
-| **Tools** | QGIS, Blender (Geometry Nodes, Cycles), BlenderGIS |
-| **Suggested code location** | `projects/02-terrain-diorama/` |
+|                             |                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Group**                   | Terrain & cartography                                                                            |
+| **Showcases**               | Draped orthophoto; solid diorama base; geological or hydrological cut-away                       |
+| **Level**                   | Intermediate                                                                                     |
+| **Status**                  | Planned                                                                                          |
+| **Data**                    | DEM + orthophoto at matching extent; optional geology polygons or borehole-derived strata depths |
+| **Tools**                   | QGIS, Blender (Geometry Nodes, Cycles), BlenderGIS                                               |
+| **Suggested code location** | `projects/02-terrain-diorama/`                                                                   |
 
 ## Goal
 
@@ -23,7 +23,7 @@ This kind of museum-display output is hard to get from a GIS, and it explains te
 ## Workflow
 
 1. **GIS:** clip DEM and orthophoto to an identical rectangular (or circular) AOI and export them.
-2. **Blender:** import the DEM with BlenderGIS (*Import georaster → DEM as displacement*) or a displaced grid; UV-map the orthophoto by extent.
+2. **Blender:** import the DEM with BlenderGIS (_Import georaster → DEM as displacement_) or a displaced grid; UV-map the orthophoto by extent.
 3. **Base:** in Geometry Nodes, extrude the terrain's boundary edges down to a flat base and fill it, then assign a side material.
 4. **Cut-away:** boolean a slab out of one side; on the cut face, drive a banded material from Z (strata) or from depths imported as attributes.
 5. **Presentation:** studio lighting (area lights), shallow depth of field, and a turntable animation.
@@ -53,9 +53,9 @@ Hero still, turntable MP4, optional GLB for the web (project 17)
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

@@ -2,15 +2,15 @@
 title: 11 Rule-based vegetation and rocks
 ---
 
-| | |
-|---|---|
-| **Group** | Analysis you can see |
-| **Showcases** | Geometry Nodes scattering from slope, elevation and raster attributes |
-| **Level** | Advanced |
-| **Status** | Planned |
-| **Data** | DEM; land cover / vegetation classes; optional moisture or TWI raster |
-| **Tools** | QGIS, Blender Geometry Nodes, asset library (e.g. Poly Haven or Blender's online asset libraries) |
-| **Suggested code location** | `projects/11-procedural-vegetation/` |
+|                             |                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Group**                   | Analysis you can see                                                                              |
+| **Showcases**               | Geometry Nodes scattering from slope, elevation and raster attributes                             |
+| **Level**                   | Advanced                                                                                          |
+| **Status**                  | Planned                                                                                           |
+| **Data**                    | DEM; land cover / vegetation classes; optional moisture or TWI raster                             |
+| **Tools**                   | QGIS, Blender Geometry Nodes, asset library (e.g. Poly Haven or Blender's online asset libraries) |
+| **Suggested code location** | `projects/11-procedural-vegetation/`                                                              |
 
 ## Goal
 
@@ -24,8 +24,8 @@ It turns a classified raster into a believable landscape, and the rules are insp
 
 1. **GIS:** derive slope, TWI and class rasters at the same extent; encode classes as integers.
 2. **Blender:** sample the rasters onto the terrain (Image Texture in Geometry Nodes using UVs, or attributes written by script).
-3. *Distribute Points on Faces* with density from the rules; *Instance on Points* from a collection per class; randomise scale and rotation.
-4. Use *Realize Instances* only for export; keep instances for rendering.
+3. _Distribute Points on Faces_ with density from the rules; _Instance on Points_ from a collection per class; randomise scale and rotation.
+4. Use _Realize Instances_ only for export; keep instances for rendering.
 
 ## Key techniques
 
@@ -51,9 +51,9 @@ Landscape stills; a diagram of the rule graph
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

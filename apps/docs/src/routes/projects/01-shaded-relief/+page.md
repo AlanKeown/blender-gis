@@ -2,15 +2,15 @@
 title: 01 Shaded-relief map
 ---
 
-| | |
-|---|---|
-| **Group** | Terrain & cartography |
-| **Showcases** | Cartographic relief rendering; DEM → displacement; orthographic map camera |
-| **Level** | Introductory |
-| **Status** | Planned |
-| **Data** | DEM (Copernicus GLO-30, SRTM, or 1–5 m LiDAR DEM from ELVIS for Australian sites); AOI boundary |
-| **Tools** | QGIS / GDAL, Blender (Cycles), optional BlenderGIS |
-| **Suggested code location** | `projects/01-shaded-relief/` |
+|                             |                                                                                                 |
+| --------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Group**                   | Terrain & cartography                                                                           |
+| **Showcases**               | Cartographic relief rendering; DEM → displacement; orthographic map camera                      |
+| **Level**                   | Introductory                                                                                    |
+| **Status**                  | Planned                                                                                         |
+| **Data**                    | DEM (Copernicus GLO-30, SRTM, or 1–5 m LiDAR DEM from ELVIS for Australian sites); AOI boundary |
+| **Tools**                   | QGIS / GDAL, Blender (Cycles), optional BlenderGIS                                              |
+| **Suggested code location** | `projects/01-shaded-relief/`                                                                    |
 
 ## Goal
 
@@ -24,7 +24,7 @@ Cycles computes real cast shadows and soft ambient occlusion. A GIS hillshade on
 
 1. **GIS:** reproject the DEM to the project CRS, clip to the AOI plus a margin, fill voids, and export as Float32 GeoTIFF. Record min/max elevation.
 2. **GIS (optional):** export a 16-bit normalised PNG for a pure-displacement build, and a hypsometric tint or land-cover raster at the same extent.
-3. **Blender:** add a plane sized to the DEM extent in metres; use *Subdivision* (adaptive at render time in Cycles) or a dense grid; add a *Displace* modifier using the DEM image (Non-Color, Extend), with strength = (max − min) × exaggeration.
+3. **Blender:** add a plane sized to the DEM extent in metres; use _Subdivision_ (adaptive at render time in Cycles) or a dense grid; add a _Displace_ modifier using the DEM image (Non-Color, Extend), with strength = (max − min) × exaggeration.
 4. **Light:** a Sun lamp at 25–35° elevation from the north-west (the cartographic convention), with a small angle for soft shadows; optionally a faint fill.
 5. **Camera:** orthographic, top-down, ortho scale equal to the AOI width; render resolution chosen for the print size at 300 dpi.
 6. **Composite:** multiply the relief over a tint layer in Blender's compositor or in QGIS.
@@ -55,9 +55,9 @@ High-resolution PNG/TIFF; optional georeferenced GeoTIFF via BlenderGIS (see pro
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

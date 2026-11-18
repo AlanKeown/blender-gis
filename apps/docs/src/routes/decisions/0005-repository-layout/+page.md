@@ -1,5 +1,5 @@
 ---
-title: "0005. Repository layout: one public monorepo, two working copies"
+title: '0005. Repository layout: one public monorepo, two working copies'
 ---
 
 - **Status:** Accepted

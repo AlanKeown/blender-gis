@@ -1,5 +1,5 @@
 ---
-title: "0003. Additional compute and hosted services: free tiers, adopted selectively"
+title: '0003. Additional compute and hosted services: free tiers, adopted selectively'
 ---
 
 - **Status:** Accepted
@@ -29,17 +29,17 @@ allowance in June 2026), so nothing here may be a single point of failure.
 
 The repository is **public**.
 
-| Role | Service | Status |
-|---|---|---|
-| CI (docs and site builds, tests, small CPU renders) | GitHub Actions, standard runners | Adopted |
-| Hosting, docs (SveltePress) and demo site (SvelteKit) | Cloudflare Pages / Workers | Adopted |
-| Large result assets (GLB, video, point clouds) | Cloudflare R2 | Adopted |
-| Final animation renders of non-sensitive scenes | SheepIt render farm | Optional |
-| Scripted headless batch renders | Kaggle Notebooks | Optional |
-| Browser-based "try it" environment for readers (non-GPU parts) | GitHub Codespaces | Optional |
-| Always-on compute | Home Ubuntu server, Oracle Cloud Always Free | Deferred to topics 7 and 14 |
-| 3D Tiles streaming, hosted PostGIS | Cesium ion, Supabase | Deferred to topic 14 |
-| Other GPU notebooks | Google Colab, Lightning AI | Not adopted |
+| Role                                                           | Service                                      | Status                      |
+| -------------------------------------------------------------- | -------------------------------------------- | --------------------------- |
+| CI (docs and site builds, tests, small CPU renders)            | GitHub Actions, standard runners             | Adopted                     |
+| Hosting, docs (SveltePress) and demo site (SvelteKit)          | Cloudflare Pages / Workers                   | Adopted                     |
+| Large result assets (GLB, video, point clouds)                 | Cloudflare R2                                | Adopted                     |
+| Final animation renders of non-sensitive scenes                | SheepIt render farm                          | Optional                    |
+| Scripted headless batch renders                                | Kaggle Notebooks                             | Optional                    |
+| Browser-based "try it" environment for readers (non-GPU parts) | GitHub Codespaces                            | Optional                    |
+| Always-on compute                                              | Home Ubuntu server, Oracle Cloud Always Free | Deferred to topics 7 and 14 |
+| 3D Tiles streaming, hosted PostGIS                             | Cesium ion, Supabase                         | Deferred to topic 14        |
+| Other GPU notebooks                                            | Google Colab, Lightning AI                   | Not adopted                 |
 
 ## Rationale
 

@@ -80,7 +80,7 @@ dependencies:
   - lazrs-python
   - numpy
   - scipy
-  - qgis            # PyQGIS + qgis_process for headless processing
+  - qgis # PyQGIS + qgis_process for headless processing
   - jupyterlab
   - pytest
   - ruff

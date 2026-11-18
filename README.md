@@ -11,15 +11,15 @@ documentation site that will hold each project's results.
 
 The guide is the SveltePress site in [`apps/docs/`](apps/docs/src/routes/+page.md):
 
-| Start here | |
-|---|---|
-| [What can be achieved](apps/docs/src/routes/guide/capabilities/+page.md) | The capability map, including what Blender does badly |
-| [Toolchain](apps/docs/src/routes/guide/toolchain/+page.md) | Add-ons, apps and MCP servers, with their status in November 2026 |
-| [Conventions](apps/docs/src/routes/guide/conventions/+page.md) | CRS, local origin, vertical datum, hand-off formats |
-| [Setup](apps/docs/src/routes/setup/+page.md) | Windows host, WSL2, VS Code, repository, AI/MCP, ArcGIS Pro |
-| [Project catalogue](apps/docs/src/routes/projects/+page.md) | The 20 projects and a suggested build order |
-| [Research validation](apps/docs/src/routes/reference/research-validation/+page.md) | Claim-by-claim check of `research.txt` |
-| [Decision records](apps/docs/src/routes/decisions/+page.md) | Why the environment and repository are set up as they are |
+| Start here                                                                         |                                                                   |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [What can be achieved](apps/docs/src/routes/guide/capabilities/+page.md)           | The capability map, including what Blender does badly             |
+| [Toolchain](apps/docs/src/routes/guide/toolchain/+page.md)                         | Add-ons, apps and MCP servers, with their status in November 2026 |
+| [Conventions](apps/docs/src/routes/guide/conventions/+page.md)                     | CRS, local origin, vertical datum, hand-off formats               |
+| [Setup](apps/docs/src/routes/setup/+page.md)                                       | Windows host, WSL2, VS Code, repository, AI/MCP, ArcGIS Pro       |
+| [Project catalogue](apps/docs/src/routes/projects/+page.md)                        | The 20 projects and a suggested build order                       |
+| [Research validation](apps/docs/src/routes/reference/research-validation/+page.md) | Claim-by-claim check of `research.txt`                            |
+| [Decision records](apps/docs/src/routes/decisions/+page.md)                        | Why the environment and repository are set up as they are         |
 
 ## Run the docs site locally
 

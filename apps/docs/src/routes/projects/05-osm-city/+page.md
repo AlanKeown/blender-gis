@@ -2,15 +2,15 @@
 title: 05 Extruded city from OSM and local footprints
 ---
 
-| | |
-|---|---|
-| **Group** | Urban & site |
-| **Showcases** | Vector import; attribute-driven extrusion; context modelling |
-| **Level** | Introductory |
-| **Status** | Planned |
-| **Data** | OpenStreetMap buildings, roads and landuse; optional authoritative footprints with heights; DEM |
-| **Tools** | QGIS (QuickOSM), BlenderGIS or Blosm, Geometry Nodes |
-| **Suggested code location** | `projects/05-osm-city/` |
+|                             |                                                                                                 |
+| --------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Group**                   | Urban & site                                                                                    |
+| **Showcases**               | Vector import; attribute-driven extrusion; context modelling                                    |
+| **Level**                   | Introductory                                                                                    |
+| **Status**                  | Planned                                                                                         |
+| **Data**                    | OpenStreetMap buildings, roads and landuse; optional authoritative footprints with heights; DEM |
+| **Tools**                   | QGIS (QuickOSM), BlenderGIS or Blosm, Geometry Nodes                                            |
+| **Suggested code location** | `projects/05-osm-city/`                                                                         |
 
 ## Goal
 
@@ -24,7 +24,7 @@ It shows the core BlenderGIS/Blosm workflow and the step up from a 2D map to an 
 
 1. **GIS:** fetch buildings with QuickOSM; compute a numeric `height_m` field (height → levels × 3 m → default); reproject and export to Shapefile (BlenderGIS's vector import format).
 2. **Blender:** import with BlenderGIS using `height_m` as the extrusion field, or import flat and extrude in Geometry Nodes from the attribute.
-3. Drop buildings onto the terrain (BlenderGIS *drop to ground*) and import roads as curves with a width per class.
+3. Drop buildings onto the terrain (BlenderGIS _drop to ground_) and import roads as curves with a width per class.
 4. Style: a muted context palette with landuse polygons as a ground texture; render aerial obliques and a short orbit.
 
 ## Key techniques
@@ -52,9 +52,9 @@ Oblique stills, orbit MP4; attribution “© OpenStreetMap contributors”
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 

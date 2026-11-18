@@ -2,15 +2,15 @@
 title: 20 ArcGIS Pro preparation track
 ---
 
-| | |
-|---|---|
-| **Group** | Pipelines & publishing |
-| **Showcases** | Interchangeability of GIS preparation; ArcPy ↔ open-source parity |
-| **Level** | Intermediate |
-| **Status** | Planned |
-| **Data** | Inputs of projects 01, 05 and 10 |
-| **Tools** | ArcGIS Pro 3.6/3.7 + ArcPy (Windows); optionally arcgis-mcp-bridge |
-| **Suggested code location** | `projects/20-arcgis-pro-track/` |
+|                             |                                                                    |
+| --------------------------- | ------------------------------------------------------------------ |
+| **Group**                   | Pipelines & publishing                                             |
+| **Showcases**               | Interchangeability of GIS preparation; ArcPy ↔ open-source parity  |
+| **Level**                   | Intermediate                                                       |
+| **Status**                  | Planned                                                            |
+| **Data**                    | Inputs of projects 01, 05 and 10                                   |
+| **Tools**                   | ArcGIS Pro 3.6/3.7 + ArcPy (Windows); optionally arcgis-mcp-bridge |
+| **Suggested code location** | `projects/20-arcgis-pro-track/`                                    |
 
 ## Goal
 
@@ -49,9 +49,9 @@ Side-by-side renders + a diff report
 
 ## Data and licences
 
-| Dataset | Source | Licence |
-|---|---|---|
-| _to be completed_ | | |
+| Dataset           | Source | Licence |
+| ----------------- | ------ | ------- |
+| _to be completed_ |        |         |
 
 ## Notes
 
